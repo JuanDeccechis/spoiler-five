@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Empty HTML</h1>
+    <p>This is my ghpages url: </p>
+    <a href="https://juandeccechis.github.io/react-in-github/">https://juandeccechis.github.io/react-in-github/</a>
+    <p>For activate, go to your repo settings, scroll down to Github Pages, and finaly synchonize gh-pages with the branch that you want to deploy.</p>
+    <br>
+    <br>
+    <h2>React app</h2>
+    <p>For create a react app you need node and npm</p>
+    <p>Then write in a console, npm i create-react-app, and finally npx create-react-app my-app </p>
+    <p>An alternative is create-react-redux-router-app, that is more specific.</p>
+    <p>Write in the console cd my-app and npm start to run it</p>
+    <br>
+    <br>
+    <h2>React app in gh-pages</h2>
+    <a href="https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f"> https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f</a>
+    <p>In the console, write npm install gh-pages --save-dev</p>
+    <p>Then go to my-app -> package.json. And edit it with: </p>
+    <span>"homepage": "http://juandeccechis@github.io/myapp", </span>
+    <span> and in the scripts section: </span>
+    <span>    "predeploy": "npm run build",  "deploy": "gh-pages -d build",</span>
+    <br>
+    <p>And finally write in the console, npm run deploy, for launch it.</p>
+</body>
+</html>
