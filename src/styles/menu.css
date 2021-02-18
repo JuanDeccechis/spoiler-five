@@ -1,0 +1,16 @@
+.toolbar,
+.player {
+    background-color: darkgrey;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    
+    @media (min-width: 900px) {
+        height: 6vh;
+    }
+}
