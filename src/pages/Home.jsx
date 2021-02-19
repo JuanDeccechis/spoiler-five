@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { actions } from '../reducer/flow'
 
 
 class Home extends Component {
@@ -16,6 +17,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
+        let resul = actions.initRequest();
     }
 
     render() {
