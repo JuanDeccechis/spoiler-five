@@ -1,12 +1,12 @@
 import Home from './Home'
+import Song from './Song'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-const Routes = () => (
+const Routes = (props) => (
     <Router basename='/spoiler-five'>
         <Switch>
-            <Route path="/">
-                <Home />
-            </Route>
+            <Route exact path="/"> <Home globalState={props.globalState}/> </Route>
+            <Route exact path="/song"> <Song globalState={props.globalState}/> </Route>
             
         </Switch>
     </Router>

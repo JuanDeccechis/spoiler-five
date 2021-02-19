@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { actions } from '../reducer/flow'
+import { Link } from 'react-router-dom'
 
 
 class Home extends Component {
@@ -9,15 +9,12 @@ class Home extends Component {
             searchInSongs: true, 
             searchInPodcast: true, 
             searchInPlaylist: true, 
-            searchInAlbum: true
+            searchInAlbum: true,
         }
         this.audio = "";
-        //this.play = this.play.bind(this);
-        
     }
 
     componentDidMount() {
-        let resul = actions.initRequest();
     }
 
     render() {
@@ -54,6 +51,8 @@ class Home extends Component {
 
                     </div>
                 }
+                <Link to="/song" > Song </Link>
+
             </div>
         )
     }
