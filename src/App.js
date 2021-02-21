@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
 import "./styles/menu.css";
+import "./styles/icons.css";
+import "./styles/player.css";
 import { Player, Header, Menu } from "./components";
 import { Routes } from './pages'
 

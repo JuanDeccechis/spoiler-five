@@ -1,0 +1,146 @@
+/*icons*/
+.icon{
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    padding: 0;
+    margin: 0 20px;
+    border: none;
+}
+
+.icon.primary{
+    width: 100px;
+    height: 100px;
+}
+
+.pause{
+    background-image: url("./icons/pause.svg");
+}
+
+.play{
+    background-image: url("./icons/play.svg");
+}
+
+.previous{
+    background-image: url("./icons/previous.svg");
+}
+
+.next{
+    background-image: url("./icons/next.svg");
+}
+
+.notification{
+    background-image: url("./icons/bell.svg");
+}
+
+.notification-yes{
+    background-image: url("./icons/notification-bell.svg");
+}
+
+.user{
+    background-image: url("./icons/user.svg");
+}
+
+.user-loged{
+    background-image: url("./icons/user-loged.svg");
+}
+
+.menu-icon{
+    background-image: url("./icons/menu.svg");
+}
+
+.refresh{
+    background-image: url("./icons/refresh.svg");
+}
+
+.loading{
+    background-image: url("./icons/loading.svg");
+}
+
+.search{
+    background-image: url("./icons/search.svg");
+}
+
+.search-black{
+    background-image: url("./icons/search-black.svg");
+}
+
+.star{
+    background-image: url("./icons/star.svg");
+}
+
+.like{
+    background-image: url("./icons/like.svg");
+}
+
+.like-complete{
+    background-image: url("./icons/like-complete.svg");
+}
+
+.heart{
+    background-image: url("./icons/heart.svg");
+}
+
+.heart-complete{
+    background-image: url("./icons/heart-complete.svg");
+}
+
+.dislike{
+    background-image: url("./icons/dislike.svg");
+}
+
+.dislike-complete{
+    background-image: url("./icons/dislike-complete.svg");
+}
+
+.share{
+    background-image: url("./icons/share.svg");
+}
+
+.add{
+    background-image: url("./icons/add.svg");
+}
+
+.delete{
+    background-image: url("./icons/delete.svg");
+}
+
+.show-more{
+    background-image: url("./icons/show-more.svg");
+}
+
+.question{
+    background-image: url("./icons/question.svg");
+}
+
+.setting{
+    background-image: url("./icons/setting.svg");
+}
+
+.menu-playlist{
+    background-image: url("./icons/playlist.svg");
+}
+
+.menu-playlist2{
+    background-image: url("./icons/playlist2.svg");
+}
+
+.menu-album{
+    background-image: url("./icons/album.svg");
+}
+
+.menu-podcast{
+    background-image: url("./icons/podcast.svg");
+}
+
+.menu-song{
+    background-image: url("./icons/song.svg");
+}
+
+.menu-favorites{
+    background-image: url("./icons/favorites.svg");
+}
+
+.volume{
+    background-image: url("./icons/volume.svg");
+}

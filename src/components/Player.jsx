@@ -32,48 +32,25 @@ class Player extends Component {
 
     render() {
         const { play } = this.state;
-        //<audio controls autoPlay src="freejazz.wav"></audio>
         return (
             <div>
-                <div className="player2" >
-                    <button onClick={this.pause} className="icon star"></button>
-                    <button onClick={this.pause} className="icon like"></button>
-                    <button onClick={this.pause} className="icon like-complete"></button>
-                    <button onClick={this.pause} className="icon heart"></button>
-                    <button onClick={this.pause} className="icon heart-complete"></button>
-                    <button onClick={this.pause} className="icon dislike"></button>
-                    <button onClick={this.pause} className="icon dislike-complete"></button>
-                    <button onClick={this.pause} className="icon share"></button>
-                    <button onClick={this.pause} className="icon add"></button>
-                    <button onClick={this.pause} className="icon delete"></button>
-                    <button onClick={this.pause} className="icon show-more"></button>
-                </div>
-                <div className="player2" >
-                    <button onClick={this.pause} className="icon question"></button>
-                    <button onClick={this.pause} className="icon setting"></button>
-                    <button onClick={this.pause} className="icon menu-playlist"></button>
-                    <button onClick={this.pause} className="icon menu-playlist2"></button>
-                    <button onClick={this.pause} className="icon menu-album"></button>
-                    <button onClick={this.pause} className="icon menu-podcast"></button>
-                    <button onClick={this.pause} className="icon menu-song"></button>
-                    <button onClick={this.pause} className="icon menu-favorites"></button>
-                </div>
                 <div className="player" >
-                    <button onClick={this.pause} className="icon menu-icon"></button>
-                    <button onClick={this.pause} className="icon previous"></button>
-                    { play ? 
-                        <button onClick={this.pause} className="icon primary pause"></button>
-                    :
-                        <button onClick={this.play} className="icon primary play"></button>
-                    }
-                    <button onClick={this.pause} className="icon next"></button>
-                    <button onClick={this.pause} className="icon notification-yes"></button>
-                    <button onClick={this.pause} className="icon notification"></button>
-                    <button onClick={this.pause} className="icon refresh"></button>
-                    <button onClick={this.pause} className="icon loading"></button>
-                    <button onClick={this.pause} className="icon search"></button>
-                    <button onClick={this.pause} className="icon search-black"></button>
-                    <button onClick={this.pause} className="icon user"></button>
+                    <div className="player-left">
+                        <div className="player-song-name">
+                            <marquee>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis perspiciatis similique, neque explicabo porro accusantium nisi, quaerat fuga quos dolor officia, possimus quis quas voluptate quia odio autem doloribus aliquid?</marquee>
+                        </div>
+                        <button onClick={this.pause} className="icon refresh"></button>
+                    </div>
+                    <div className="player-principal-controls">
+                        <button onClick={this.pause} className="icon previous"></button>
+                        { play ? 
+                            <button onClick={this.pause} className="icon primary pause"></button>
+                        :
+                            <button onClick={this.play} className="icon primary play"></button>
+                        }
+                        <button onClick={this.pause} className="icon next"></button>
+                    </div>
+                    <button onClick={this.pause} className="icon volume"></button>
                 </div>
             </div>
         );

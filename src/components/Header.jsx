@@ -5,6 +5,9 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state={
+            isMobile : false,
+            notifications : 0,
+            user : '',
         }
     }
 
@@ -12,16 +15,24 @@ class Header extends Component {
     }
 
     render() {
+        const { isMobile, notifications, user } = this.state;
         return (
             <div className="header">
-                    <button onClick={this.pause} className="icon question"></button>
-                    <button onClick={this.pause} className="icon setting"></button>
-                    <button onClick={this.pause} className="icon menu-playlist"></button>
-                    <button onClick={this.pause} className="icon menu-playlist2"></button>
-                    <button onClick={this.pause} className="icon menu-album"></button>
-                    <button onClick={this.pause} className="icon menu-podcast"></button>
-                    <button onClick={this.pause} className="icon menu-song"></button>
-                    <button onClick={this.pause} className="icon menu-favorites"></button>
+                <span>logo</span>
+                {isMobile && 
+                    <button onClick={this.pause} className="icon menu-icon"></button>
+                }
+                <button onClick={this.pause} className="icon search"></button>
+                {notifications ? 
+                    <button onClick={this.pause} className="icon notification-yes"></button>
+                :
+                    <button onClick={this.pause} className="icon notification"></button>
+                }
+                {user ? 
+                    <button onClick={this.pause} className="icon user-loged"></button>
+                :
+                    <button onClick={this.pause} className="icon user"></button>
+                }
             </div>
         )
     }

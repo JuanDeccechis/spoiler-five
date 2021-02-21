@@ -14,14 +14,40 @@ class Menu extends Component {
     render() {
         return (
             <div className="menu">
-                    <button onClick={this.pause} className="icon question"></button>
-                    <button onClick={this.pause} className="icon setting"></button>
-                    <button onClick={this.pause} className="icon menu-playlist"></button>
-                    <button onClick={this.pause} className="icon menu-playlist2"></button>
-                    <button onClick={this.pause} className="icon menu-album"></button>
-                    <button onClick={this.pause} className="icon menu-podcast"></button>
-                    <button onClick={this.pause} className="icon menu-song"></button>
-                    <button onClick={this.pause} className="icon menu-favorites"></button>
+                <ul className="menu-list">
+                    <li className="menu-item">
+                        <button onClick={this.pause} className="icon question"></button>
+                        <p>Consultanos</p>
+                    </li>
+                    <li className="menu-item">
+                        <button onClick={this.pause} className="icon setting"></button>
+                        <p>Configuracion</p>
+                    </li>
+                    <li className="menu-item">
+                        <button onClick={this.pause} className="icon menu-playlist"></button>
+                        <p>Playlist</p>
+                    </li>
+                    <li className="menu-item">
+                        <button onClick={this.pause} className="icon menu-playlist2"></button>
+                        <p>Playlist</p>
+                    </li>
+                    <li className="menu-item">
+                        <button onClick={this.pause} className="icon menu-album"></button>
+                        <p>Album</p>
+                    </li>
+                    <li className="menu-item">
+                        <button onClick={this.pause} className="icon menu-podcast"></button>
+                        <p>Podcast</p>
+                    </li>
+                    <li className="menu-item">
+                        <button onClick={this.pause} className="icon menu-song"></button>
+                        <p>Cancion</p>
+                    </li>
+                    <li className="menu-item">
+                        <button onClick={this.pause} className="icon menu-favorites"></button>
+                        <p>Mis Favs</p>
+                    </li>
+                </ul>
             </div>
         )
     }
