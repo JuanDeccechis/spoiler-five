@@ -8,28 +8,6 @@ button{
 }
 button:focus { outline: none; }
 
-/** QUITAR**/
-.player2 {
-    background-color: darkgrey;
-}
-/*player*/
-.toolbar,
-.player {
-    background-color: darkgrey;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    height: 10vh;
-    
-    @media (min-width: 900px) {
-        height: 6vh;
-    }
-}
-
 /*icons*/
 .icon{
     width: 75px;
@@ -72,7 +50,7 @@ button:focus { outline: none; }
     background-image: url("./icons/user.svg");
 }
 
-.menu{
+.menu-icon{
     margin-left: 100px;
     background-image: url("./icons/menu.svg");
 }
@@ -135,4 +113,94 @@ button:focus { outline: none; }
 
 .show-more{
     background-image: url("./icons/show-more.svg");
+}
+
+.question{
+    background-image: url("./icons/question.svg");
+}
+
+.setting{
+    background-image: url("./icons/setting.svg");
+}
+
+.menu-playlist{
+    background-image: url("./icons/playlist.svg");
+}
+
+.menu-playlist2{
+    background-image: url("./icons/playlist2.svg");
+}
+
+.menu-album{
+    background-image: url("./icons/album.svg");
+}
+
+.menu-podcast{
+    background-image: url("./icons/podcast.svg");
+}
+
+.menu-song{
+    background-image: url("./icons/song.svg");
+}
+
+.menu-favorites{
+    background-image: url("./icons/favorites.svg");
+}
+
+/** QUITAR**/
+.player2 {
+    background-color: darkgrey;
+}
+/*player*/
+.toolbar,
+.player {
+    background-color: blue;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    
+
+}
+/*header*/
+.header{
+    background-color: green;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    
+    @media (min-width: 900px) {
+        height: 6vh;
+    }
+}
+
+/*menu y body*/
+.page-content{
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 10vh;
+    height: 80vh;
+    width: 100vw;
+}
+
+.menu{
+    background-color: red;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.page{
+    width: calc(100vw - 200px);
 }

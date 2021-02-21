@@ -36,20 +36,30 @@ class Player extends Component {
         return (
             <div>
                 <div className="player2" >
-                <button onClick={this.pause} className="icon star"></button>
-                <button onClick={this.pause} className="icon like"></button>
-                <button onClick={this.pause} className="icon like-complete"></button>
-                <button onClick={this.pause} className="icon heart"></button>
-                <button onClick={this.pause} className="icon heart-complete"></button>
-                <button onClick={this.pause} className="icon dislike"></button>
-                <button onClick={this.pause} className="icon dislike-complete"></button>
-                <button onClick={this.pause} className="icon share"></button>
-                <button onClick={this.pause} className="icon add"></button>
-                <button onClick={this.pause} className="icon delete"></button>
-                <button onClick={this.pause} className="icon show-more"></button>
+                    <button onClick={this.pause} className="icon star"></button>
+                    <button onClick={this.pause} className="icon like"></button>
+                    <button onClick={this.pause} className="icon like-complete"></button>
+                    <button onClick={this.pause} className="icon heart"></button>
+                    <button onClick={this.pause} className="icon heart-complete"></button>
+                    <button onClick={this.pause} className="icon dislike"></button>
+                    <button onClick={this.pause} className="icon dislike-complete"></button>
+                    <button onClick={this.pause} className="icon share"></button>
+                    <button onClick={this.pause} className="icon add"></button>
+                    <button onClick={this.pause} className="icon delete"></button>
+                    <button onClick={this.pause} className="icon show-more"></button>
+                </div>
+                <div className="player2" >
+                    <button onClick={this.pause} className="icon question"></button>
+                    <button onClick={this.pause} className="icon setting"></button>
+                    <button onClick={this.pause} className="icon menu-playlist"></button>
+                    <button onClick={this.pause} className="icon menu-playlist2"></button>
+                    <button onClick={this.pause} className="icon menu-album"></button>
+                    <button onClick={this.pause} className="icon menu-podcast"></button>
+                    <button onClick={this.pause} className="icon menu-song"></button>
+                    <button onClick={this.pause} className="icon menu-favorites"></button>
                 </div>
                 <div className="player" >
-                    <button onClick={this.pause} className="icon menu"></button>
+                    <button onClick={this.pause} className="icon menu-icon"></button>
                     <button onClick={this.pause} className="icon previous"></button>
                     { play ? 
                         <button onClick={this.pause} className="icon primary pause"></button>

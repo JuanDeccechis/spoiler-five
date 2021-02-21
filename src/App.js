@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import "./styles/menu.css";
-import { Player } from "./components";
+import { Player, Header, Menu } from "./components";
 import { Routes } from './pages'
 
 class App extends Component {
@@ -51,7 +51,11 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Routes globalState={this.state.jsonData}/>
+                <Header></Header>
+                <div className="page-content">
+                  <Menu></Menu>
+                  <Routes globalState={this.state.jsonData}/>
+                </div>
                 <Player></Player>
             </div>
         )}
