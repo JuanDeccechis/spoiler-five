@@ -34,12 +34,37 @@ class Player extends Component {
         const { play } = this.state;
         //<audio controls autoPlay src="freejazz.wav"></audio>
         return (
-            <div className="player" >
-                { play ? 
-                    <button onClick={this.pause}>Pause</button>
-                :
-                    <button onClick={this.play}>Play</button>
-                }
+            <div>
+                <div className="player2" >
+                <button onClick={this.pause} className="icon star"></button>
+                <button onClick={this.pause} className="icon like"></button>
+                <button onClick={this.pause} className="icon like-complete"></button>
+                <button onClick={this.pause} className="icon heart"></button>
+                <button onClick={this.pause} className="icon heart-complete"></button>
+                <button onClick={this.pause} className="icon dislike"></button>
+                <button onClick={this.pause} className="icon dislike-complete"></button>
+                <button onClick={this.pause} className="icon share"></button>
+                <button onClick={this.pause} className="icon add"></button>
+                <button onClick={this.pause} className="icon delete"></button>
+                <button onClick={this.pause} className="icon show-more"></button>
+                </div>
+                <div className="player" >
+                    <button onClick={this.pause} className="icon menu"></button>
+                    <button onClick={this.pause} className="icon previous"></button>
+                    { play ? 
+                        <button onClick={this.pause} className="icon primary pause"></button>
+                    :
+                        <button onClick={this.play} className="icon primary play"></button>
+                    }
+                    <button onClick={this.pause} className="icon next"></button>
+                    <button onClick={this.pause} className="icon notification-yes"></button>
+                    <button onClick={this.pause} className="icon notification"></button>
+                    <button onClick={this.pause} className="icon refresh"></button>
+                    <button onClick={this.pause} className="icon loading"></button>
+                    <button onClick={this.pause} className="icon search"></button>
+                    <button onClick={this.pause} className="icon search-black"></button>
+                    <button onClick={this.pause} className="icon user"></button>
+                </div>
             </div>
         );
     }

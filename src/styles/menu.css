@@ -1,3 +1,18 @@
+/*general*/
+:root {
+    --transparent: rgba(0, 0, 0, 0);
+    --white: rgba(247, 247, 247, 1);
+}
+button{
+    background-color: var(--transparent);
+}
+button:focus { outline: none; }
+
+/** QUITAR**/
+.player2 {
+    background-color: darkgrey;
+}
+/*player*/
 .toolbar,
 .player {
     background-color: darkgrey;
@@ -13,4 +28,111 @@
     @media (min-width: 900px) {
         height: 6vh;
     }
+}
+
+/*icons*/
+.icon{
+    width: 75px;
+    height: 75px;
+    background-size: cover;
+    padding: 0;
+    border: none;
+}
+
+.icon.primary{
+    width: 100px;
+    height: 100px;
+}
+
+.pause{
+    background-image: url("./icons/pause.svg");
+}
+
+.play{
+    background-image: url("./icons/play.svg");
+}
+
+.previous{
+    background-image: url("./icons/previous.svg");
+}
+
+.next{
+    background-image: url("./icons/next.svg");
+}
+
+.notification{
+    background-image: url("./icons/bell.svg");
+}
+
+.notification-yes{
+    background-image: url("./icons/notification-bell.svg");
+}
+
+.user{
+    background-image: url("./icons/user.svg");
+}
+
+.menu{
+    margin-left: 100px;
+    background-image: url("./icons/menu.svg");
+}
+
+.refresh{
+    background-image: url("./icons/refresh.svg");
+}
+
+.loading{
+    background-image: url("./icons/loading.svg");
+}
+
+.search{
+    background-image: url("./icons/search.svg");
+}
+
+.search-black{
+    background-image: url("./icons/search-black.svg");
+}
+
+.star{
+    background-image: url("./icons/star.svg");
+}
+
+.like{
+    background-image: url("./icons/like.svg");
+}
+
+.like-complete{
+    background-image: url("./icons/like-complete.svg");
+}
+
+.heart{
+    background-image: url("./icons/heart.svg");
+}
+
+.heart-complete{
+    background-image: url("./icons/heart-complete.svg");
+}
+
+.dislike{
+    background-image: url("./icons/dislike.svg");
+}
+
+.dislike-complete{
+    background-image: url("./icons/dislike-complete.svg");
+}
+
+.share{
+    background-image: url("./icons/share.svg");
+}
+
+.add{
+    background-image: url("./icons/add.svg");
+}
+
+.delete{
+    background-image: url("./icons/delete.svg");
+}
+
+.show-more{
+    background-image: url("./icons/show-more.svg");
 }
