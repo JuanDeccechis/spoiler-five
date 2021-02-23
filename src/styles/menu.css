@@ -20,7 +20,7 @@ button:focus { outline: none; }
     align-items: center;
     height: 10vh;
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
     .header{
     height: 6vh;
     }
@@ -34,27 +34,36 @@ button:focus { outline: none; }
     left: 0;
     right: 0;
     top: 10vh;
-    height: 80vh;
+    height: 74vh;
     width: 100vw;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 770px) {
     .page-content{
         top: 6vh;
-        height: 88vh;
+        height: 84vh;
     }
 }
 
 .menu{
     background-color: red;
     height: 100%;
-    width: 200px;
+    width: 100px;
     display: flex;
     flex-direction: column;
+    position: absolute;
+}
+
+@media (min-width: 770px) {
+    .menu{
+        width: 200px;
+        position: relative;
+    }
 }
 
 .page{
     width: calc(100vw - 200px); /*todo el ancho - el ancho del menu*/
+    margin: auto;
 }
 
 .menu-list{
@@ -63,14 +72,26 @@ button:focus { outline: none; }
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    overflow-y: auto;
 }
 
-.menu-item{
+.menu-item a{
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 5px 0;
     border-bottom: 2px solid brown;
+    text-decoration: none;
+    padding: 10px 0 5px 0;
+}
+
+@media (min-width: 770px) {
+    .menu-item a{
+        flex-direction: row;
+    }
+}
+
+.menu-item a p{
+    margin: 2px 0;
 }

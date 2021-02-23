@@ -3,7 +3,7 @@ import './App.css'
 import "./styles/menu.css";
 import "./styles/icons.css";
 import "./styles/player.css";
-import { Player, Header, Menu } from "./components";
+import { Player, Header } from "./components";
 import { Routes } from './pages'
 import { isDOMComponentElement } from 'react-dom/test-utils';
 
@@ -81,10 +81,9 @@ toggleMenuMobile() {
         return (
             <div className="App">
                 <Header isMobile={isMobile} toggleMenuMobile={this.toggleMenuMobile}></Header>
-                <div className="page-content">
-                  <Menu isMobile={isMobile} showMenuMobile= {showMenuMobile}></Menu>
-                  <Routes globalState={this.state.jsonData}/>
-                </div>
+                
+                  <Routes globalState={this.state.jsonData} isMobile={isMobile} showMenuMobile= {showMenuMobile}/>
+                
                 <Player></Player>
             </div>
         )}

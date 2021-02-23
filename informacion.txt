@@ -1,1 +1,4 @@
 Fuente de íconos: https://www.flaticon.com/search?search-type=icons
+
+consumo de la API key: https://rapidapi.com/developer/dashboard
+ejemplo de uso de la API key: https://rapidapi.com/theaudiodb/api/theaudiodb?endpoint=apiendpoint_c68ea14d-88ca-44c2-9751-4b2c8583c2fb
