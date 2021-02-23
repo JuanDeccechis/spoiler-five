@@ -5,7 +5,6 @@ import "./styles/icons.css";
 import "./styles/player.css";
 import { Player, Header } from "./components";
 import { Routes } from './pages'
-import { isDOMComponentElement } from 'react-dom/test-utils';
 
 class App extends Component {
 
@@ -14,7 +13,7 @@ class App extends Component {
     this.state={
       jsonData : "",
       showMenuMobile: false,
-      isMobile: window.innerWidth <= 768,
+      isMobile: window.innerWidth <= 770,
     }
     this.audio = "";
     this.toggleMenuMobile = this.toggleMenuMobile.bind(this);
@@ -23,6 +22,7 @@ class App extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.onWindowsResize);
+    this.onWindowsResize();
 
     //fetch("https://theaudiodb.p.rapidapi.com/playlist.php?s=Top_Popular_Tracks_2019", {
         //fetch("https://theaudiodb.p.rapidapi.com/playlist.php?format=track&user=Zag", {
@@ -65,10 +65,7 @@ componentWillUnmount(){
 
 onWindowsResize() {
   console.log("resize");
-    this.setState({ isMobile: window.innerWidth <= 768 });
-    if (window.innerWidth > 768) {
-      this.setState({ showMenuMobile : true });
-    }
+    this.setState({ isMobile: window.innerWidth <= 770 });
 }
 
 toggleMenuMobile() {

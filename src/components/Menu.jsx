@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { withRouter, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 class Menu extends Component {
@@ -14,10 +13,11 @@ class Menu extends Component {
     }
 
     render() {
-        const { showMenuMobile } = this.props;
+        const { isMobile, showMenuMobile } = this.props;
+        
         return (
             <div>
-                {showMenuMobile &&
+                {(!isMobile || showMenuMobile) &&
                     <div className="menu">
                         <ul className="menu-list">
                             <li className="menu-item">
