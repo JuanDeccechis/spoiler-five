@@ -19,6 +19,12 @@
     height: 10vh;
 }
 
+@media (min-width: 768px) {
+    .player{
+    height: 6vh;
+    }
+}
+
 .player-left{
     max-width: calc(25vw);
     height: 100%;

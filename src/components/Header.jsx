@@ -5,22 +5,20 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state={
-            isMobile : false,
             notifications : 0,
             user : '',
         }
     }
 
-    componentDidMount() {
-    }
-
     render() {
-        const { isMobile, notifications, user } = this.state;
+        const { isMobile, toggleMenuMobile } = this.props;
+        const { notifications, user } = this.state;
         return (
             <div className="header">
-                <span>logo</span>
-                {isMobile && 
-                    <button onClick={this.pause} className="icon menu-icon"></button>
+                {isMobile ?
+                    <button onClick={toggleMenuMobile} className="icon menu-icon"></button>
+                :
+                    <button onClick={this.pause}>logo</button>
                 }
                 <button onClick={this.pause} className="icon search"></button>
                 {notifications ? 

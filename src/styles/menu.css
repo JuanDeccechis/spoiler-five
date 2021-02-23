@@ -19,11 +19,13 @@ button:focus { outline: none; }
     display: flex;
     align-items: center;
     height: 10vh;
-    
-    @media (min-width: 900px) {
-        height: 6vh;
+}
+@media (min-width: 768px) {
+    .header{
+    height: 6vh;
     }
 }
+
 
 /*menu y body*/
 .page-content{
@@ -36,8 +38,16 @@ button:focus { outline: none; }
     width: 100vw;
 }
 
+@media (min-width: 768px) {
+    .page-content{
+        top: 6vh;
+        height: 88vh;
+    }
+}
+
 .menu{
     background-color: red;
+    height: 100%;
     width: 200px;
     display: flex;
     flex-direction: column;
@@ -49,11 +59,12 @@ button:focus { outline: none; }
 
 .menu-list{
     padding: 0;
-    height: 75%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
+
 .menu-item{
     width: 100%;
     display: flex;

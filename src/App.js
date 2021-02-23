@@ -5,18 +5,25 @@ import "./styles/icons.css";
 import "./styles/player.css";
 import { Player, Header, Menu } from "./components";
 import { Routes } from './pages'
+import { isDOMComponentElement } from 'react-dom/test-utils';
 
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.state={
-      jsonData : ""
+      jsonData : "",
+      showMenuMobile: false,
+      isMobile: window.innerWidth <= 768,
     }
     this.audio = "";
+    this.toggleMenuMobile = this.toggleMenuMobile.bind(this);
+    this.onWindowsResize = this.onWindowsResize.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    window.addEventListener('resize', this.onWindowsResize);
+
     //fetch("https://theaudiodb.p.rapidapi.com/playlist.php?s=Top_Popular_Tracks_2019", {
         //fetch("https://theaudiodb.p.rapidapi.com/playlist.php?format=track&user=Zag", {
         //fetch("https://theaudiodb.p.rapidapi.com/playlist.php?format=track", {
@@ -50,12 +57,32 @@ class App extends Component {
         */
   }
 
+
+
+componentWillUnmount(){
+    window.removeEventListener('resize', this.onWindowsResize);
+}
+
+onWindowsResize() {
+  console.log("resize");
+    this.setState({ isMobile: window.innerWidth <= 768 });
+    if (window.innerWidth > 768) {
+      this.setState({ showMenuMobile : true });
+    }
+}
+
+toggleMenuMobile() {
+  console.log("toggle");
+    this.setState({ showMenuMobile : !this.state.showMenuMobile });
+}
+
     render() {
+      const { isMobile, showMenuMobile } = this.state;
         return (
             <div className="App">
-                <Header></Header>
+                <Header isMobile={isMobile} toggleMenuMobile={this.toggleMenuMobile}></Header>
                 <div className="page-content">
-                  <Menu></Menu>
+                  <Menu isMobile={isMobile} showMenuMobile= {showMenuMobile}></Menu>
                   <Routes globalState={this.state.jsonData}/>
                 </div>
                 <Player></Player>

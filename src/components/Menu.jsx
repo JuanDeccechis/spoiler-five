@@ -12,7 +12,10 @@ class Menu extends Component {
     }
 
     render() {
+        const { showMenuMobile } = this.props;
         return (
+            <div>
+            {showMenuMobile && 
             <div className="menu">
                 <ul className="menu-list">
                     <li className="menu-item">
@@ -48,6 +51,8 @@ class Menu extends Component {
                         <p>Mis Favs</p>
                     </li>
                 </ul>
+            </div>
+            }
             </div>
         )
     }
