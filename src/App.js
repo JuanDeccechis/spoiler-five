@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import './App.css'
 import "./styles/menu.css";
+import "./styles/header.css";
 import "./styles/icons.css";
+import "./styles/tabs.css";
 import "./styles/player.css";
 import { Player, Header } from "./components";
 import { Routes } from './pages'
@@ -14,10 +16,12 @@ class App extends Component {
       jsonData : "",
       showMenuMobile: false,
       isMobile: window.innerWidth <= 770,
+      search: '',
     }
     this.audio = "";
     this.toggleMenuMobile = this.toggleMenuMobile.bind(this);
     this.onWindowsResize = this.onWindowsResize.bind(this);
+    this.handleChangeGlobalSearch = this.handleChangeGlobalSearch.bind(this);
   }
 
   componentDidMount() {
@@ -64,22 +68,25 @@ componentWillUnmount(){
 }
 
 onWindowsResize() {
-  console.log("resize");
     this.setState({ isMobile: window.innerWidth <= 770 });
 }
 
 toggleMenuMobile() {
-  console.log("toggle");
     this.setState({ showMenuMobile : !this.state.showMenuMobile });
 }
 
+handleChangeGlobalSearch(value) {
+  this.setState({ search: value });
+}
+
+
     render() {
-      const { isMobile, showMenuMobile } = this.state;
+      const { isMobile, showMenuMobile, search } = this.state;
         return (
             <div className="App">
                 <Header isMobile={isMobile} toggleMenuMobile={this.toggleMenuMobile}></Header>
                 
-                  <Routes globalState={this.state.jsonData} isMobile={isMobile} showMenuMobile= {showMenuMobile}/>
+                  <Routes globalState={this.state.jsonData} isMobile={isMobile} showMenuMobile= {showMenuMobile} search={search} handleChangeGlobalSearch={this.handleChangeGlobalSearch}/>
                 
                 <Player></Player>
             </div>

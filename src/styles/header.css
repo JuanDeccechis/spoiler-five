@@ -1,0 +1,21 @@
+
+/*header*/
+.header{
+    background-color: green;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: calc(100vw - 20px);
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+@media (min-width: 770px) {
+    .header{
+    height: 6vh;
+    }
+}
+

@@ -1,36 +1,50 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { Menu } from "../components";
+import { Menu, Tabs } from "../components";
 
 
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state={
-            searchInSongs: true, 
-            searchInPodcast: true, 
-            searchInPlaylist: true, 
+        this.state = {
+            searchInSongs: true,
+            searchInPodcast: true,
+            searchInPlaylist: true,
             searchInAlbum: true,
-        }
+        };
         this.audio = "";
+        this.handleChangeGlobalSearch = this.handleChangeGlobalSearch.bind(this);
     }
 
     componentDidMount() {
     }
 
+    handleChangeGlobalSearch() {
+        const { handleChangeGlobalSearch } = this.props;
+        const { inputSearch } = this.refs;
+        handleChangeGlobalSearch(inputSearch.value);
+    }
+
     render() {
-        const { searchInSongs, searchInPodcast, searchInPlaylist, searchInAlbum } = this.state;
-        const { isMobile, showMenuMobile } = this.props;
+        const {searchInSongs, searchInPodcast, searchInPlaylist, searchInAlbum } = this.state;
+        const { isMobile, showMenuMobile, search } = this.props;
         return (
             <div className="page-content">
-                <Menu isMobile={isMobile} showMenuMobile= {showMenuMobile}></Menu>
+                <Menu isMobile={isMobile} showMenuMobile={showMenuMobile}></Menu>
+
                 <div className="page">
-                <h1>Busquedas</h1>
-                <div className="separacion"></div>
-                <div className="information container">
-                    <h2>Filtros</h2>
-                </div>
-                
+                    <div className="search">
+                        <input placeholder="Buscar" ref="inputSearch" onChange={this.handleChangeGlobalSearch} />
+                    </div>
+                    {search &&
+                        <Tabs></Tabs>
+                    }
+
+
+
+
+
+
+
                     {searchInSongs &&
                         <div>
                             <div className="separacion"></div>
@@ -54,7 +68,6 @@ class Home extends Component {
 
                         </div>
                     }
-                    <Link to="/song" > Song </Link>
 
                     <div className="player2" >
                         <button className="icon star"></button>

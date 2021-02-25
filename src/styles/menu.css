@@ -2,31 +2,16 @@
 :root {
     --transparent: rgba(0, 0, 0, 0);
     --white: rgba(247, 247, 247, 1);
+    --black: rgba(43, 43, 43, 1);
 }
 button{
     background-color: var(--transparent);
 }
 button:focus { outline: none; }
-
-/*header*/
-.header{
-    background-color: green;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    height: 10vh;
+input:focus { outline: none; }
+ul {
+    list-style-type: none;
 }
-@media (min-width: 770px) {
-    .header{
-    height: 6vh;
-    }
-}
-
-
 /*menu y body*/
 .page-content{
     display: flex;
@@ -63,7 +48,7 @@ button:focus { outline: none; }
 
 .page{
     width: calc(100vw - 200px); /*todo el ancho - el ancho del menu*/
-    margin: auto;
+    margin: 0 auto;
 }
 
 .menu-list{
@@ -94,4 +79,27 @@ button:focus { outline: none; }
 
 .menu-item a p{
     margin: 2px 0;
+}
+
+.search{
+    position: fixed;
+    left: 20vw;
+    top: 2vh;
+    height: 6vh;
+}
+
+input{
+    width: calc(50vw - 10px);
+    height: calc(100% - 6px);
+    background-color: var(--white);
+    border-radius: 10px;
+    border-color: var(--transparent);
+}
+
+input::placeholder {
+    color: var(--black);
+}
+
+input{
+    padding-left: 10px;
 }

@@ -65,11 +65,11 @@
     background-image: url("./icons/loading.svg");
 }
 
-.search{
+.search-icon{
     background-image: url("./icons/search.svg");
 }
 
-.search-black{
+.search-black-icon{
     background-image: url("./icons/search-black.svg");
 }
 

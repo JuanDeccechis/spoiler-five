@@ -20,17 +20,19 @@ class Header extends Component {
                 :
                     <button onClick={this.pause}>logo</button>
                 }
-                <button onClick={this.pause} className="icon search"></button>
-                {notifications ? 
-                    <button onClick={this.pause} className="icon notification-yes"></button>
-                :
-                    <button onClick={this.pause} className="icon notification"></button>
-                }
-                {user ? 
-                    <button onClick={this.pause} className="icon user-loged"></button>
-                :
-                    <button onClick={this.pause} className="icon user"></button>
-                }
+                <div></div>
+                <div>
+                    {notifications ? 
+                        <button onClick={this.pause} className="icon notification-yes"></button>
+                    :
+                        <button onClick={this.pause} className="icon notification"></button>
+                    }
+                    {user ? 
+                        <button onClick={this.pause} className="icon user-loged"></button>
+                    :
+                        <button onClick={this.pause} className="icon user"></button>
+                    }
+                </div>
             </div>
         )
     }
