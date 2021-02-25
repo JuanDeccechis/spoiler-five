@@ -13,12 +13,13 @@ class Menu extends Component {
     }
 
     render() {
-        const { isMobile, showMenuMobile } = this.props;
+        const { isMobile, showMenuMobile, user } = this.props;
         
         return (
             <div>
-                {(!isMobile || showMenuMobile) &&
+                {user && (!isMobile || showMenuMobile) &&
                     <div className="menu">
+                        <p> {user} </p>
                         <ul className="menu-list">
                             <li className="menu-item">
                                 <Link to="/questions" >
@@ -65,7 +66,7 @@ class Menu extends Component {
                             <li className="menu-item">
                                 <Link to="/favorites" >
                                     <button onClick={this.pause} className="icon menu-favorites"></button>
-                                    <p>Mis Favs</p>
+                                    <p>Favoritos</p>
                                 </Link>
                             </li>
                         </ul>

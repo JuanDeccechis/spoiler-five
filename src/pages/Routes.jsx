@@ -1,5 +1,6 @@
 import Home from './Home'
 import Song from './Song'
+import Login from './Login'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
@@ -7,8 +8,9 @@ const Routes = (props) => (
     
     <Router basename='/spoiler-five'>
         <Switch>
-            <Route exact path="/"> <Home globalState={props.globalState} isMobile={props.isMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch}/> </Route>
-            <Route exact path="/song"> <Song globalState={props.globalState} isMobile={props.isMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch}/> </Route>
+            <Route exact path="/"> <Home globalState={props.globalState} isMobile={props.isMobile} toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
+            <Route exact path="/song"> <Song globalState={props.globalState} isMobile={props.isMobile}  toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
+            <Route exact path="/login"> <Login globalState={props.globalState} isMobile={props.isMobile}  toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
             
         </Switch>
     </Router>

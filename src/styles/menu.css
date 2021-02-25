@@ -53,6 +53,7 @@ ul {
 
 .menu-list{
     padding: 0;
+    margin: 0;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -89,11 +90,17 @@ ul {
 }
 
 input{
-    width: calc(50vw - 10px);
+    width: calc(45vw - 10px);
     height: calc(100% - 6px);
     background-color: var(--white);
     border-radius: 10px;
     border-color: var(--transparent);
+}
+
+@media (min-width: 430px) {
+    input{
+        width: calc(50vw - 10px);
+    }
 }
 
 input::placeholder {
