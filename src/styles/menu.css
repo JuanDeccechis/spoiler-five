@@ -19,14 +19,14 @@ ul {
     left: 0;
     right: 0;
     top: 10vh;
-    height: 74vh;
+    height: 80vh;
     width: 100vw;
 }
 
 @media (min-width: 770px) {
     .page-content{
-        top: 6vh;
-        height: 84vh;
+        top: 9vh;
+        height: 82vh;
     }
 }
 
@@ -47,8 +47,17 @@ ul {
 }
 
 .page{
-    width: calc(100vw - 200px); /*todo el ancho - el ancho del menu*/
-    margin: 0 auto;
+   /* width: calc(100vw - 100px); /*todo el ancho - el ancho del menu*/
+   width: 100vw;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+@media (min-width: 770px) {
+    .page{
+        width: calc(100vw - 200px); /*todo el ancho - el ancho del menu*/
+        margin: 0 auto;
+    }
 }
 
 .menu-list{

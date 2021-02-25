@@ -16,12 +16,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    height: 16vh;
+    height: 10vh;
 }
 
 @media (min-width: 770px) {
     .player{
-    height: 10vh;
+    height: 9vh;
     }
 }
 
