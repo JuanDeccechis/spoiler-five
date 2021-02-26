@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Menu, Tabs } from "../components";
+import { Menu, Tabs, Header } from "../components";
 
 class Song extends Component {
     constructor(props) {
@@ -30,18 +30,22 @@ class Song extends Component {
     }
 
     render() {
-        const { isMobile, showMenuMobile, search } = this.props;
+        const { isMobile, toggleMenuMobile, showMenuMobile, search, user, setUser, globalState } = this.props;
+        
         return (
-            <div className="page-content">
-                <Menu isMobile={isMobile} showMenuMobile={showMenuMobile}></Menu>
+            <div>
+                <Header isMobile={isMobile} toggleMenuMobile={toggleMenuMobile} user={user} setUser={setUser}></Header>
+                <div className="page-content">
+                    <Menu isMobile={isMobile} showMenuMobile={showMenuMobile} user={user} setUser={setUser}></Menu>
 
-                <div className="page">
-                    <div className="search">
-                        <input placeholder="Buscar" ref="inputSearch" onChange={this.handleChangeGlobalSearch} />
+                    <div className="page">
+                        <div className="search">
+                            <input placeholder="Buscar" ref="inputSearch" onChange={this.handleChangeGlobalSearch} />
+                        </div>
+                        {search &&
+                            <Tabs></Tabs>
+                        }
                     </div>
-                    {search &&
-                        <Tabs></Tabs>
-                    }
                 </div>
             </div>
         )

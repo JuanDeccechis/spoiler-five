@@ -14,6 +14,7 @@
 
 .audio-preview{
     height: 100%;
+    position: relative;
 }
 
 .audio-content{
@@ -34,19 +35,20 @@
 
 .audio-preview:hover .audio-content{
     position: relative;
-    top: -14px;
-}
-
-@media (min-width: 770px) {
-    .audio-preview:hover .audio-content{
-        top: -39px;
-    }
 }
 
 .play-fondo{
-    top: 32.5px;
     margin: 0;
-    position: sticky;
+    top: 35px;
+    left: 45px;
+    position: absolute;
+}
+
+@media (min-width: 770px) {
+    .play-fondo{
+        top: 25px;
+        left: 37px;
+    }
 }
 
 .mamacita{
