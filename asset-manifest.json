@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/spoiler-five/static/css/main.53d61e69.chunk.css",
-    "main.js": "/spoiler-five/static/js/main.f6c2ef3a.chunk.js",
-    "main.js.map": "/spoiler-five/static/js/main.f6c2ef3a.chunk.js.map",
+    "main.css": "/spoiler-five/static/css/main.1b0c2dbb.chunk.css",
+    "main.js": "/spoiler-five/static/js/main.378a040a.chunk.js",
+    "main.js.map": "/spoiler-five/static/js/main.378a040a.chunk.js.map",
     "runtime-main.js": "/spoiler-five/static/js/runtime-main.0457369b.js",
     "runtime-main.js.map": "/spoiler-five/static/js/runtime-main.0457369b.js.map",
     "static/js/2.4e280fa1.chunk.js": "/spoiler-five/static/js/2.4e280fa1.chunk.js",
     "static/js/2.4e280fa1.chunk.js.map": "/spoiler-five/static/js/2.4e280fa1.chunk.js.map",
     "index.html": "/spoiler-five/index.html",
-    "static/css/main.53d61e69.chunk.css.map": "/spoiler-five/static/css/main.53d61e69.chunk.css.map",
+    "static/css/main.1b0c2dbb.chunk.css.map": "/spoiler-five/static/css/main.1b0c2dbb.chunk.css.map",
     "static/js/2.4e280fa1.chunk.js.LICENSE.txt": "/spoiler-five/static/js/2.4e280fa1.chunk.js.LICENSE.txt",
     "static/media/icons.css": "/spoiler-five/static/media/volume.738280b9.svg",
     "static/media/header.css": "/spoiler-five/static/media/tiktok.cc221f7e.svg"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.0457369b.js",
     "static/js/2.4e280fa1.chunk.js",
-    "static/css/main.53d61e69.chunk.css",
-    "static/js/main.f6c2ef3a.chunk.js"
+    "static/css/main.1b0c2dbb.chunk.css",
+    "static/js/main.378a040a.chunk.js"
   ]
 }
