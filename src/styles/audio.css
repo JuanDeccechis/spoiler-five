@@ -34,11 +34,17 @@
 
 .audio-preview:hover .audio-content{
     position: relative;
-    top: -18px;
+    top: -14px;
+}
+
+@media (min-width: 770px) {
+    .audio-preview:hover .audio-content{
+        top: -39px;
+    }
 }
 
 .play-fondo{
-    top: 25px;
+    top: 32.5px;
     margin: 0;
     position: sticky;
 }
