@@ -4,6 +4,7 @@
     width: 80vw;
     height: 20vh;
     margin: 0 auto;
+    padding-top: 20px;
     overflow-x: scroll;
     background-color: rgba(0, 0, 0, 0.5);
 }

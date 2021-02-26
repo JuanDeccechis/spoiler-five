@@ -38,8 +38,7 @@
 }
 
 .play-fondo{
-    width: 20px;
-    height: 20px;
+    top: 25px;
     margin: 0;
     position: sticky;
 }
