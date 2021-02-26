@@ -39,10 +39,39 @@
     overflow: hidden;
 }
 
+.player-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
 .player-principal-controls{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     width: 50vw;
+    height: 7vh;
+}
+
+.input-volume{
+    position: absolute;
+    bottom: 15vh;
+    right: -10vw;
+    transform: rotate(270deg);
+    width: 150px;
+}
+
+@media (min-width: 430px) {
+    .input-volume{
+        right: -4vw;
+    }
+}
+
+@media (min-width: 770px) {
+    .input-volume{
+        right: -1vw;
+        bottom: 12vh;
+    }
 }

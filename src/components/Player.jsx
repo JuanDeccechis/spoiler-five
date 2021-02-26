@@ -6,12 +6,18 @@ class Player extends Component {
         super(props);
         this.state={
             play: false,
-            otherUrl: "http://streaming.tdiradio.com:8000/house.mp3"
+            otherUrl: "http://streaming.tdiradio.com:8000/house.mp3",
+            movingVolume: false,
+            countSecondsHeared: 0,
         }
         this.url = "https://p.scdn.co/mp3-preview/09a6fcd9ca6aac808bf9ab042a55ca9ea63d66d0?cid=d8a5ed958d274c2e8ee717e6a4b0971d";
         this.audio = "";
+        this.intervalosAudio = "";
         this.play = this.play.bind(this);
         this.pause = this.pause.bind(this);
+        this.handleMovingVolume = this.handleMovingVolume.bind(this);
+        this.handleChangeVolume = this.handleChangeVolume.bind(this);
+        this.escucharCancion = this.escucharCancion.bind(this);
     }
 
     componentDidMount() {
@@ -23,15 +29,32 @@ class Player extends Component {
             play: true
         });
         this.audio.play();
+        this.intervalosAudio = setInterval(this.escucharCancion, 1000);
+    }
+
+    escucharCancion() {
+        const { countSecondsHeared } = this.state;
+        this.setState({ countSecondsHeared: countSecondsHeared + 1 });
     }
       
     pause(){
         this.setState({ play: false });
         this.audio.pause();
+        clearInterval(this.intervalosAudio);
+    }
+
+    handleMovingVolume() {
+        const { movingVolume } = this.state;
+        this.setState({ movingVolume: !movingVolume });
+    }
+
+    handleChangeVolume() {
+        let valueVolume = document.querySelector("#volume-control").value;
+        this.audio.volume=(valueVolume/100);
     }
 
     render() {
-        const { play } = this.state;
+        const { play, movingVolume, countSecondsHeared } = this.state;
         return (
             <div>
                 <div className="player" >
@@ -41,7 +64,8 @@ class Player extends Component {
                         </div>
                         <button onClick={this.pause} className="icon refresh"></button>
                     </div>
-                    <div className="player-principal-controls">
+                    <div className="player-principal">
+                        <div className="player-principal-controls">
                         <button onClick={this.pause} className="icon previous"></button>
                         { play ? 
                             <button onClick={this.pause} className="icon primary pause"></button>
@@ -49,8 +73,15 @@ class Player extends Component {
                             <button onClick={this.play} className="icon primary play"></button>
                         }
                         <button onClick={this.pause} className="icon next"></button>
+                        </div>
+                        <div>
+                            <input id="player-control" type="range" min="0" max="30" value={countSecondsHeared}></input>
+                        </div>
                     </div>
-                    <button onClick={this.pause} className="icon volume"></button>
+                    { movingVolume &&
+                        <input id="volume-control" type="range" min="0" max="100" className="input-volume" onInput={this.handleChangeVolume}></input>
+                    }
+                    <button onClick={this.handleMovingVolume} className="icon volume"></button>
                 </div>
             </div>
         );

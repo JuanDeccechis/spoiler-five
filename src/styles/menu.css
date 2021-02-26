@@ -36,7 +36,7 @@ ul {
     width: 100px;
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: relative;
 }
 
 @media (min-width: 770px) {
