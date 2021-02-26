@@ -1,0 +1,49 @@
+.image{
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    padding: 0;
+    margin: 0 10px;
+    border: none;
+    z-index: 0;
+}
+
+.oculto{
+    display: none;
+}
+
+.audio-preview{
+    height: 100%;
+}
+
+.audio-content{
+    height: 100%;
+}
+
+.audio-preview:hover{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.audio-preview:hover .play-fondo{
+    display: inline;
+    z-index: 100;
+}
+
+.audio-preview:hover .audio-content{
+    position: relative;
+    top: -18px;
+}
+
+.play-fondo{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    position: sticky;
+}
+
+.mamacita{
+    background-image: url("./images/mamacita.jpeg");
+}

@@ -17,7 +17,9 @@ class Header extends Component {
                 {user && isMobile ?
                     <button onClick={toggleMenuMobile} className="icon menu-icon"></button>
                 :
-                    <button onClick={this.pause}>logo</button>
+                    <Link to="/" >
+                        <div className="logo"></div>
+                    </Link>
                 }
                 <div></div>
                 <div>

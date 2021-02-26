@@ -5,6 +5,8 @@ import "./styles/header.css";
 import "./styles/icons.css";
 import "./styles/tabs.css";
 import "./styles/player.css";
+import "./styles/audio.css";
+import "./styles/home.css";
 import { Player } from "./components";
 import { Routes } from './pages'
 
@@ -29,6 +31,71 @@ class App extends Component {
   componentDidMount() {
     window.addEventListener('resize', this.onWindowsResize);
     this.onWindowsResize();
+    this.setState({
+      jsonData: {
+        signOut:[{
+        category: "tendencia",
+        audios: [{
+        title: "pepe"
+      }, {
+        title: "colo"
+      }, {
+        title: "colo"
+      }, {
+        title: "colo"
+      }, {
+        title: "colo"
+      }, {
+        title: "colo"
+      }]
+    }, {
+      category: "calidad",
+      audios: [{
+      title: "pepe"
+    }, {
+      title: "colo"
+    }, {
+      title: "colo"
+    }, {
+      title: "colo"
+    }, {
+      title: "colo"
+    }, {
+      title: "colo"
+    }]
+  }],
+  signIn:[{
+    category: "historial",
+    audios: [{
+    title: "pepe"
+  }, {
+    title: "colo"
+  }, {
+    title: "colo"
+  }, {
+    title: "colo"
+  }, {
+    title: "colo"
+  }, {
+    title: "colo"
+  }]
+}, {
+  category: "mis mejor calificados",
+  audios: [{
+  title: "pepe"
+}, {
+  title: "colo"
+}, {
+  title: "colo"
+}, {
+  title: "colo"
+}, {
+  title: "colo"
+}, {
+  title: "colo"
+}]
+  }]
+    }})
 
     //fetch("https://theaudiodb.p.rapidapi.com/playlist.php?s=Top_Popular_Tracks_2019", {
     //fetch("https://theaudiodb.p.rapidapi.com/playlist.php?format=track&user=Zag", {

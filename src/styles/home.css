@@ -1,0 +1,13 @@
+.results{
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    height: 20vh;
+    margin: 0 auto;
+    overflow-x: scroll;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.separacion{
+    height: 20px;
+}
