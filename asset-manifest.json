@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/spoiler-five/static/css/main.92a8b16b.chunk.css",
-    "main.js": "/spoiler-five/static/js/main.532bc942.chunk.js",
-    "main.js.map": "/spoiler-five/static/js/main.532bc942.chunk.js.map",
+    "main.css": "/spoiler-five/static/css/main.061ee222.chunk.css",
+    "main.js": "/spoiler-five/static/js/main.a6f62be4.chunk.js",
+    "main.js.map": "/spoiler-five/static/js/main.a6f62be4.chunk.js.map",
     "runtime-main.js": "/spoiler-five/static/js/runtime-main.0457369b.js",
     "runtime-main.js.map": "/spoiler-five/static/js/runtime-main.0457369b.js.map",
-    "static/js/2.cc193e67.chunk.js": "/spoiler-five/static/js/2.cc193e67.chunk.js",
-    "static/js/2.cc193e67.chunk.js.map": "/spoiler-five/static/js/2.cc193e67.chunk.js.map",
+    "static/js/2.8a66bf6b.chunk.js": "/spoiler-five/static/js/2.8a66bf6b.chunk.js",
+    "static/js/2.8a66bf6b.chunk.js.map": "/spoiler-five/static/js/2.8a66bf6b.chunk.js.map",
     "index.html": "/spoiler-five/index.html",
-    "static/css/main.92a8b16b.chunk.css.map": "/spoiler-five/static/css/main.92a8b16b.chunk.css.map",
-    "static/js/2.cc193e67.chunk.js.LICENSE.txt": "/spoiler-five/static/js/2.cc193e67.chunk.js.LICENSE.txt",
+    "static/css/main.061ee222.chunk.css.map": "/spoiler-five/static/css/main.061ee222.chunk.css.map",
+    "static/js/2.8a66bf6b.chunk.js.LICENSE.txt": "/spoiler-five/static/js/2.8a66bf6b.chunk.js.LICENSE.txt",
     "static/media/icons.css": "/spoiler-five/static/media/volume.738280b9.svg",
     "static/media/header.css": "/spoiler-five/static/media/tiktok.cc221f7e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.0457369b.js",
-    "static/js/2.cc193e67.chunk.js",
-    "static/css/main.92a8b16b.chunk.css",
-    "static/js/main.532bc942.chunk.js"
+    "static/js/2.8a66bf6b.chunk.js",
+    "static/css/main.061ee222.chunk.css",
+    "static/js/main.a6f62be4.chunk.js"
   ]
 }
