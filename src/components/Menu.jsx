@@ -6,6 +6,7 @@ class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            points: 0
         }
     }
 
@@ -14,12 +15,15 @@ class Menu extends Component {
 
     render() {
         const { isMobile, showMenuMobile, user } = this.props;
-        
+        const { points } = this.state;
+
         return (
             <div>
                 {user && (!isMobile || showMenuMobile) &&
                     <div className="menu">
-                        <p> {user} </p>
+                        <p className="one-line-text"> {user}
+                            Puntos: 
+                            {points} </p>
                         <ul className="menu-list">
                             <li className="menu-item">
                                 <Link to="/questions" >

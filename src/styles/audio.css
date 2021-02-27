@@ -54,3 +54,8 @@
 .mamacita{
     background-image: url("./images/mamacita.jpeg");
 }
+
+.audio-title{
+    max-width: 100px;
+    margin: 0 10px;
+}

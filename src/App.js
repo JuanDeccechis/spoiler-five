@@ -36,7 +36,7 @@ class App extends Component {
         signOut:[{
         category: "tendencia",
         audios: [{
-        title: "pepe"
+        title: "asdfghjklñ´poiuyrewsxcvbnm,.-{pñoiuytrdfcvbnm,.ñoiuytre4rtyuiop´´´ñplkjhgfvgbnm"
       }, {
         title: "colo"
       }, {

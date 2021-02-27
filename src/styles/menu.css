@@ -12,6 +12,12 @@ input:focus { outline: none; }
 ul {
     list-style-type: none;
 }
+.one-line-text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 /*menu y body*/
 .page-content{
     display: flex;

@@ -20,9 +20,9 @@ class Audio extends Component {
                 <div className="audio-content">
                     <div className="image mamacita">
                     </div>
-                    <span>
+                    <div className="audio-title one-line-text">
                         {title}
-                    </span>
+                    </div>
                 </div>
             </div>
         )
