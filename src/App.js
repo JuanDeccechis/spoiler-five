@@ -18,6 +18,7 @@ class App extends Component {
     super(props);
     this.state = {
       jsonData: "",
+      jsonDataOriginal: "",
       showMenuMobile: false,
       isMobile: window.innerWidth <= 770,
       search: '',
@@ -34,7 +35,7 @@ class App extends Component {
     window.addEventListener('resize', this.onWindowsResize);
     this.onWindowsResize();
     this.setState({
-      jsonData: {
+      jsonDataOriginal: {
         signOut:[{
         category: "tendencia",
         audios: [{
@@ -160,11 +161,30 @@ class App extends Component {
   }
 
   handleChangeGlobalSearch(value) {
-    this.setState({ search: value });
+    const { jsonDataOriginal, user } = this.state;
+    let jsonData = [];
+    if (user) {
+      for (let index = 0; index < jsonDataOriginal.signIn.length; index++) {
+        for (let indexAudio = 0; indexAudio < jsonDataOriginal.signIn[index].audios.length; indexAudio++) {
+          if (jsonDataOriginal.signIn[index].audios[indexAudio].title.includes(value)){
+            jsonData.push(jsonDataOriginal.signIn[index].audios[indexAudio]);
+          }
+        }
+      }
+    } else {
+      
+      for (let index = 0; index < jsonDataOriginal.signOut.length; index++) {
+        for (let indexAudio = 0; indexAudio < jsonDataOriginal.signOut[index].audios.length; indexAudio++) {
+          if (jsonDataOriginal.signOut[index].audios[indexAudio].title.includes(value)){
+            jsonData.push(jsonDataOriginal.signOut[index].audios[indexAudio]);
+          }
+        }
+      }
+    }
+    this.setState({ search: value, jsonData: jsonData });
   }
 
   setUser(value) {
-    console.log(value);
     this.setState({ user: value });
   }
 
@@ -172,7 +192,7 @@ class App extends Component {
     const { isMobile, showMenuMobile, search, user } = this.state;
     return (
       <div className="App">
-        <Routes globalState={this.state.jsonData} isMobile={isMobile} toggleMenuMobile={this.toggleMenuMobile} showMenuMobile={showMenuMobile} search={search} handleChangeGlobalSearch={this.handleChangeGlobalSearch} user={user} setUser={this.setUser} />
+        <Routes globalState={this.state.jsonDataOriginal} audios={this.state.jsonData} isMobile={isMobile} toggleMenuMobile={this.toggleMenuMobile} showMenuMobile={showMenuMobile} search={search} handleChangeGlobalSearch={this.handleChangeGlobalSearch} user={user} setUser={this.setUser} />
 
       </div>
     )

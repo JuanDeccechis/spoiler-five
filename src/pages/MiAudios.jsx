@@ -26,7 +26,7 @@ class MiAudios extends Component {
 
     render() {
         const { searchInSongs, searchInPodcast, searchInPlaylist, searchInAlbum } = this.state;
-        const { isMobile, toggleMenuMobile, showMenuMobile, search, user, setUser, globalState } = this.props;
+        const { isMobile, toggleMenuMobile, showMenuMobile, search, user, setUser, globalState, audios } = this.props;
         return (
             <div>
                 <Header isMobile={isMobile} toggleMenuMobile={toggleMenuMobile} user={user} setUser={setUser}></Header>
@@ -44,20 +44,33 @@ class MiAudios extends Component {
 
                             <div className="results-complete">
                                 {
-                                    globalState.signIn[0].audios.map((audio, index) =>
+                                    audios ? audios.map((audio, index) =>
                                         <Audio title={audio.title} key={index} />
                                     )
+                                        :
+                                        user && globalState.signIn[0].audios.map((audio, index) =>
+                                            <Audio title={audio.title} key={index} />
+                                        )
                                 }
                                 {
-                                    globalState.signIn[0].audios.map((audio, index) =>
+                                    audios ? audios.map((audio, index) =>
                                         <Audio title={audio.title} key={index} />
                                     )
+                                        :
+                                        user && globalState.signIn[0].audios.map((audio, index) =>
+                                            <Audio title={audio.title} key={index} />
+                                        )
                                 }
                                 {
-                                    globalState.signIn[0].audios.map((audio, index) =>
+                                    audios ? audios.map((audio, index) =>
                                         <Audio title={audio.title} key={index} />
                                     )
+                                        :
+                                        user && globalState.signIn[0].audios.map((audio, index) =>
+                                            <Audio title={audio.title} key={index} />
+                                        )
                                 }
+
                             </div>
 
 

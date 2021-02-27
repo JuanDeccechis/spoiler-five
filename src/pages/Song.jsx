@@ -18,7 +18,6 @@ class Song extends Component {
 
     componentDidMount() {
         const { globalState, search } = this.props;
-        console.log(globalState);
         const { inputSearch } = this.refs;
         inputSearch.value = search;
     }

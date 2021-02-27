@@ -26,8 +26,7 @@ class Home extends Component {
 
     render() {
         const { searchInSongs, searchInPodcast, searchInPlaylist, searchInAlbum } = this.state;
-        const { isMobile, toggleMenuMobile, showMenuMobile, search, user, setUser, globalState } = this.props;
-        console.log(globalState);
+        const { isMobile, toggleMenuMobile, showMenuMobile, search, user, setUser, globalState, audios } = this.props;
         return (
             <div>
                 <Header isMobile={isMobile} toggleMenuMobile={toggleMenuMobile} user={user} setUser={setUser}></Header>
@@ -48,6 +47,10 @@ class Home extends Component {
                                     <p>{listAudios.category}</p>
                                     <div className="results">
                                         {
+                                            audios? audios.map((audio, index) =>
+                                                <Audio title={audio.title} key={index} />
+                                            )
+                                            :
                                             listAudios.audios.map((audio, index) =>
                                                 <Audio title={audio.title} key={index} />
                                             )
@@ -62,6 +65,10 @@ class Home extends Component {
                                     <p>{listAudios.category}</p>
                                     <div className="results">
                                         {
+                                            audios ? audios.map((audio, index) =>
+                                                <Audio title={audio.title} key={index} />
+                                            )
+                                            :
                                             listAudios.audios.map((audio, index) =>
                                                 <Audio title={audio.title} key={index} />
                                             )

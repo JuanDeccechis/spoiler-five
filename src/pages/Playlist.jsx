@@ -21,8 +21,7 @@ class Playlist extends Component {
     }
 
     render() {
-        const { isMobile, toggleMenuMobile, showMenuMobile, search, user, setUser, globalState } = this.props;
-        console.log(globalState);
+        const { isMobile, toggleMenuMobile, showMenuMobile, search, user, setUser, globalState, audios } = this.props;
         return (
             <div>
                 <Header isMobile={isMobile} toggleMenuMobile={toggleMenuMobile} user={user} setUser={setUser}></Header>
@@ -43,9 +42,13 @@ class Playlist extends Component {
                                     <p>{listAudios.category}</p>
                                     <div className="results">
                                         {
-                                            listAudios.audios.map((audio, index) =>
-                                                <Audio title={audio.title} key={index} />
-                                            )
+                                            audios? audios.map((audio, index) =>
+                                            <Audio title={audio.title} key={index} />
+                                        )
+                                        :
+                                        listAudios.audios.map((audio, index) =>
+                                            <Audio title={audio.title} key={index} />
+                                        )
                                         }
                                     </div>
                                 </div>
@@ -57,9 +60,13 @@ class Playlist extends Component {
                                     <p>{listAudios.category}</p>
                                     <div className="results">
                                         {
-                                            listAudios.audios.map((audio, index) =>
-                                                <Audio title={audio.title} key={index} />
-                                            )
+                                            audios? audios.map((audio, index) =>
+                                            <Audio title={audio.title} key={index} />
+                                        )
+                                        :
+                                        listAudios.audios.map((audio, index) =>
+                                            <Audio title={audio.title} key={index} />
+                                        )
                                         }
                                     </div>
                                 </div>
