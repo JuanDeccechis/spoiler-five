@@ -33,4 +33,18 @@
 
 .filters{
     background-color: violet;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.pill{
+    width: 30%;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.pill.selected{
+    background-color: darkcyan;
+    border: 2px;
 }

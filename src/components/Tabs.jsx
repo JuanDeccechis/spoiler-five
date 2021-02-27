@@ -7,9 +7,11 @@ class Tabs extends Component {
         super(props);
         this.state = {
             seeFilters: false,
-            filters: ''
+            filters: '',
+            selected: [],
         }
         this.handleClickToggleFilters = this.handleClickToggleFilters.bind(this);
+        this.changeSelected = this.changeSelected.bind(this);
     }
 
     componentDidMount() {
@@ -20,8 +22,21 @@ class Tabs extends Component {
         this.setState({ seeFilters: !seeFilters });
     }
 
+    changeSelected(element) {
+        const { selected } = this.state;
+        let aux = selected;
+        if (selected.includes(element)) {
+            aux = selected.filter((item) => {
+                return item !== element
+            })
+        } else {
+            aux.push(element);
+        }
+        this.setState({ selected: aux });
+    }
+
     render() {
-        const { seeFilters } = this.state;
+        const { seeFilters, selected } = this.state;
         return (
             <div>
                 <div className="tabs">
@@ -54,7 +69,12 @@ class Tabs extends Component {
                 </div>
                 {seeFilters && 
                     <div className="filters">
-                        asdasd
+                        <div className={`pill ${selected.includes("tendencia")? 'selected' : ''}`} onClick={() => this.changeSelected("tendencia")}>
+                            tendencia
+                        </div>
+                        <div className={`pill ${selected.includes("calidad")? 'selected' : ''}`} onClick={() => this.changeSelected("calidad")}>
+                            calidad
+                        </div>
                     </div>
                 }
             </div>

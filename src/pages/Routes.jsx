@@ -1,19 +1,26 @@
 import Home from './Home'
 import Song from './Song'
 import Login from './Login'
+import Playlist from './Playlist'
+import MiPlaylist from './MiPlaylist'
+import { Menu, Player } from "../components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
 const Routes = (props) => (
-    
-    <Router basename='/spoiler-five'>
-        <Switch>
-            <Route exact path="/"> <Home globalState={props.globalState} isMobile={props.isMobile} toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
-            <Route exact path="/song"> <Song globalState={props.globalState} isMobile={props.isMobile}  toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
-            <Route exact path="/login"> <Login globalState={props.globalState} isMobile={props.isMobile}  toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
-            
-        </Switch>
-    </Router>
+    <div>
+        <Router basename='/spoiler-five'>
+            <Switch>
+                <Route exact path="/"> <Home globalState={props.globalState} isMobile={props.isMobile} toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
+                <Route exact path="/song"> <Song globalState={props.globalState} isMobile={props.isMobile}  toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
+                <Route exact path="/playlist"> <Playlist globalState={props.globalState} isMobile={props.isMobile}  toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
+                <Route exact path="/login"> <Login globalState={props.globalState} isMobile={props.isMobile}  toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
+                <Route exact path="/miPlaylist"> <MiPlaylist globalState={props.globalState} isMobile={props.isMobile}  toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
+            </Switch>
+        </Router>
+        <Player></Player>
+        
+    </div>
 
 )
 

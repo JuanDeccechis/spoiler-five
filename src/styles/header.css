@@ -45,3 +45,10 @@
         display: inline;
     }
 }
+
+.forma-playlist{
+    width: 500px;
+    height: 500px;
+    background-size: cover;
+    background-image: url("./images/forma-playlist.png");
+}

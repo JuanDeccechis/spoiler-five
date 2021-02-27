@@ -7,7 +7,7 @@ import "./styles/tabs.css";
 import "./styles/player.css";
 import "./styles/audio.css";
 import "./styles/home.css";
-import { Player } from "./components";
+
 import { Routes } from './pages'
 
 class App extends Component {
@@ -160,7 +160,6 @@ class App extends Component {
       <div className="App">
         <Routes globalState={this.state.jsonData} isMobile={isMobile} toggleMenuMobile={this.toggleMenuMobile} showMenuMobile={showMenuMobile} search={search} handleChangeGlobalSearch={this.handleChangeGlobalSearch} user={user} setUser={this.setUser} />
 
-        <Player></Player>
       </div>
     )
   }

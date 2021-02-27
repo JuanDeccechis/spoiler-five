@@ -25,7 +25,7 @@ class Menu extends Component {
                             Puntos: 
                             {points} </p>
                         <ul className="menu-list">
-                            <li className="menu-item">
+     {/*                       <li className="menu-item">
                                 <Link to="/questions" >
                                     <button onClick={this.pause} className="icon question"></button>
                                     <p>Consultanos</p>
@@ -37,19 +37,13 @@ class Menu extends Component {
                                     <p>Configuracion</p>
                                 </Link>
                             </li>
-                            <li className="menu-item">
-                                <Link to="/playlist" >
-                                    <button onClick={this.pause} className="icon menu-playlist"></button>
-                                    <p>Playlist</p>
-                                </Link>
-                            </li>
-                            <li className="menu-item">
-                                <Link to="/playlist" >
+                */}                      <li className="menu-item">
+                                <Link to="/miPlaylist" >
                                     <button onClick={this.pause} className="icon menu-playlist2"></button>
                                     <p>Playlist</p>
                                 </Link>
                             </li>
-                            <li className="menu-item">
+            {/*                <li className="menu-item">
                                 <Link to="/album" >
                                     <button onClick={this.pause} className="icon menu-album"></button>
                                     <p>Album</p>
@@ -67,7 +61,13 @@ class Menu extends Component {
                                     <p>Cancion</p>
                                 </Link>
                             </li>
-                            <li className="menu-item">
+            */}             <li className="menu-item">
+                                <Link to="/miPlaylist" >
+                                    <button onClick={this.pause} className="icon menu-song"></button>
+                                    <p>Subidos por mi</p>
+                                </Link>
+                            </li>
+                               <li className="menu-item">
                                 <Link to="/favorites" >
                                     <button onClick={this.pause} className="icon menu-favorites"></button>
                                     <p>Favoritos</p>

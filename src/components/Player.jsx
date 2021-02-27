@@ -10,7 +10,7 @@ class Player extends Component {
             movingVolume: false,
             countSecondsHeared: 0,
         }
-        this.url = "https://p.scdn.co/mp3-preview/09a6fcd9ca6aac808bf9ab042a55ca9ea63d66d0?cid=d8a5ed958d274c2e8ee717e6a4b0971d";
+        this.urls = ["https://p.scdn.co/mp3-preview/09a6fcd9ca6aac808bf9ab042a55ca9ea63d66d0?cid=d8a5ed958d274c2e8ee717e6a4b0971d", "http://streaming.tdiradio.com:8000/house.mp3"];
         this.audio = "";
         this.intervalosAudio = "";
         this.play = this.play.bind(this);
@@ -18,10 +18,22 @@ class Player extends Component {
         this.handleMovingVolume = this.handleMovingVolume.bind(this);
         this.handleChangeVolume = this.handleChangeVolume.bind(this);
         this.escucharCancion = this.escucharCancion.bind(this);
+        this.setSong = this.setSong.bind(this);
+        this.setPrevSong = this.setPrevSong.bind(this);
     }
 
     componentDidMount() {
-        this.audio = new Audio(this.url);
+        this.audio = new Audio(this.urls[0]);
+    }
+
+    setPrevSong() {
+        this.audio.pause();
+        this.audio = new Audio(this.urls[0]);
+    }
+
+    setSong() {
+        this.audio.pause();
+        this.audio = new Audio(this.urls[1]);
     }
 
     play(){
@@ -63,13 +75,13 @@ class Player extends Component {
                     </div>
                     <div className="player-principal">
                         <div className="player-principal-controls">
-                        <button onClick={this.pause} className="icon icon-secondary previous"></button>
+                        <button onClick={this.setPrevSong} className="icon icon-secondary previous"></button>
                         { play ? 
                             <button onClick={this.pause} className="icon pause"></button>
                         :
                             <button onClick={this.play} className="icon play"></button>
                         }
-                        <button onClick={this.pause} className="icon icon-secondary next"></button>
+                        <button onClick={this.setSong} className="icon icon-secondary next"></button>
                         </div>
                         <div>
                             <input id="player-control" className="player-control" type="range" min="0" max="30" value={countSecondsHeared}></input>
