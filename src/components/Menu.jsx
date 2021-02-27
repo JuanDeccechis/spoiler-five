@@ -21,9 +21,6 @@ class Menu extends Component {
             <div>
                 {user && (!isMobile || showMenuMobile) &&
                     <div className="menu">
-                        <p className="one-line-text"> {user}
-                            Puntos: 
-                            {points} </p>
                         <ul className="menu-list">
      {/*                       <li className="menu-item">
                                 <Link to="/questions" >
@@ -62,7 +59,7 @@ class Menu extends Component {
                                 </Link>
                             </li>
             */}             <li className="menu-item">
-                                <Link to="/miPlaylist" >
+                                <Link to="/miAudios" >
                                     <button onClick={this.pause} className="icon menu-song"></button>
                                     <p>Subidos por mi</p>
                                 </Link>

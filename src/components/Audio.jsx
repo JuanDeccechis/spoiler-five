@@ -12,14 +12,13 @@ class Audio extends Component {
     }
 
     render() {
-        const { title } = this.props;
+        const { title, onClick } = this.props;
         
         return (
-            <div className="audio-preview">
+            <div className="audio-preview" onClick={onClick}>
                 <div className="icon play play-fondo oculto "></div>
                 <div className="audio-content">
-                    <div className="image mamacita">
-                    </div>
+                    <div className="image mamacita"></div>
                     <div className="audio-title one-line-text">
                         {title}
                     </div>

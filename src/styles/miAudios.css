@@ -1,0 +1,13 @@
+.results-complete{
+    width: 90vw;
+    height: 90vh;
+    margin: 0 auto;
+    padding-top: 20px;
+    overflow-y: scroll;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.results-complete .audio-preview{
+    height: 20vh;
+    display: inline-block;
+}

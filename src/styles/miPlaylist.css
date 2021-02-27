@@ -1,0 +1,19 @@
+.forma-playlist{
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-image: url("./images/forma-playlist.png");
+}
+
+table{
+    margin: 0 auto;
+}
+
+td{
+    width: 125px;
+}
+
+.row-selected{
+    background-color: darkcyan;
+    
+}

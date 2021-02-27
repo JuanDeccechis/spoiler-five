@@ -72,8 +72,8 @@ class Tabs extends Component {
                         <div className={`pill ${selected.includes("tendencia")? 'selected' : ''}`} onClick={() => this.changeSelected("tendencia")}>
                             tendencia
                         </div>
-                        <div className={`pill ${selected.includes("calidad")? 'selected' : ''}`} onClick={() => this.changeSelected("calidad")}>
-                            calidad
+                        <div className={`pill ${selected.includes("mejor puntuadas")? 'selected' : ''}`} onClick={() => this.changeSelected("mejor puntuadas")}>
+                            mejor puntuadas
                         </div>
                     </div>
                 }

@@ -24,12 +24,6 @@ class Header extends Component {
                         </Link>
                     }
                     
-                    <div onClick={this.pause} className="center">
-                        <p>
-                            Puntos: 
-                            {points}
-                        </p>
-                    </div>
                 </div>
                 <div></div>
                 <div>

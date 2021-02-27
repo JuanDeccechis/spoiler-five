@@ -7,6 +7,8 @@ import "./styles/tabs.css";
 import "./styles/player.css";
 import "./styles/audio.css";
 import "./styles/home.css";
+import "./styles/miPlaylist.css";
+import "./styles/miAudios.css";
 
 import { Routes } from './pages'
 
@@ -49,7 +51,7 @@ class App extends Component {
         title: "colo"
       }]
     }, {
-      category: "calidad",
+      category: "mejor puntuadas",
       audios: [{
       title: "pepe"
     }, {
@@ -67,17 +69,29 @@ class App extends Component {
   signIn:[{
     category: "historial",
     audios: [{
-    title: "pepe"
+    title: "pepe",
+    views: Math.floor(Math.random() * 10000),
+    score: Math.floor(Math.random() * 5) + 1,
   }, {
-    title: "colo"
+    title: "colo",
+    views: Math.floor(Math.random() * 10000),
+    score: Math.floor(Math.random() * 5) + 1,
   }, {
-    title: "colo"
+    title: "colo",
+    views: Math.floor(Math.random() * 10000),
+    score: Math.floor(Math.random() * 5) + 1,
   }, {
-    title: "colo"
+    title: "colo",
+    views: Math.floor(Math.random() * 10000),
+    score: Math.floor(Math.random() * 5) + 1,
   }, {
-    title: "colo"
+    title: "colo",
+    views: Math.floor(Math.random() * 10000),
+    score: Math.floor(Math.random() * 5) + 1,
   }, {
-    title: "colo"
+    title: "colo",
+    views: Math.floor(Math.random() * 10000),
+    score: Math.floor(Math.random() * 5) + 1,
   }]
 }, {
   category: "mis mejor calificados",

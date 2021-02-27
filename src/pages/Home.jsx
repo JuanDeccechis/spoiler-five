@@ -42,28 +42,28 @@ class Home extends Component {
                             <Tabs></Tabs>
                         }
                         { user? 
-                            globalState.signOut && globalState.signIn.map((listAudios) =>
-                                <div>
+                            globalState.signOut && globalState.signIn.map((listAudios, index) =>
+                                <div key={index}>
                                     <div className="separacion"></div>
                                     <p>{listAudios.category}</p>
                                     <div className="results">
                                         {
-                                            listAudios.audios.map((audio) =>
-                                                <Audio title={audio.title} />
+                                            listAudios.audios.map((audio, index) =>
+                                                <Audio title={audio.title} key={index} />
                                             )
                                         }
                                     </div>
                                 </div>
                             )
                             :
-                            globalState.signIn && globalState.signOut.map((listAudios) =>
-                                <div>
+                            globalState.signIn && globalState.signOut.map((listAudios, index) =>
+                                <div key={index}>
                                     <div className="separacion"></div>
                                     <p>{listAudios.category}</p>
                                     <div className="results">
                                         {
-                                            listAudios.audios.map((audio) =>
-                                                <Audio title={audio.title} />
+                                            listAudios.audios.map((audio, index) =>
+                                                <Audio title={audio.title} key={index} />
                                             )
                                         }
                                     </div>
