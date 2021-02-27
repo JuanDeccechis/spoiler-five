@@ -6,21 +6,31 @@ class Header extends Component {
         super(props);
         this.state={
             notifications : 0,
+            points : 0,
         }
     }
 
     render() {
         const { isMobile, toggleMenuMobile, user, setUser } = this.props;
-        const { notifications } = this.state;
+        const { notifications, points } = this.state;
         return (
             <div className="header">
-                {user && isMobile ?
-                    <button onClick={toggleMenuMobile} className="icon menu-icon"></button>
-                :
-                    <Link to="/" >
-                        <div className="logo"></div>
-                    </Link>
-                }
+                <div className="header-left">
+                    {user && isMobile ?
+                        <button onClick={toggleMenuMobile} className="icon menu-icon"></button>
+                    :
+                        <Link to="/" >
+                            <div className="logo"></div>
+                        </Link>
+                    }
+                    
+                    <div onClick={this.pause} className="center">
+                        <p>
+                            Puntos: 
+                            {points}
+                        </p>
+                    </div>
+                </div>
                 <div></div>
                 <div>
                     {user ?

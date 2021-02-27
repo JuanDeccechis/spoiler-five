@@ -10,15 +10,22 @@
 
 @media (min-width: 770px) {
     .icon {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         margin: 0 20px;
     }
 }
 
-.icon.primary{
-    width: 100px;
-    height: 100px;
+.icon-secondary{
+    width: 25px;
+    height: 25px;
+}
+
+@media (min-width: 770px) {
+    .icon-secondary {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .pause{

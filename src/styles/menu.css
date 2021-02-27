@@ -98,7 +98,7 @@ ul {
     height: 6vh;
 }
 
-input{
+.input-search{
     width: calc(45vw - 10px);
     height: calc(100% - 6px);
     background-color: var(--white);
@@ -107,15 +107,15 @@ input{
 }
 
 @media (min-width: 430px) {
-    input{
+    .input-search{
         width: calc(50vw - 10px);
     }
 }
 
-input::placeholder {
+.input-search::placeholder {
     color: var(--black);
 }
 
-input{
+.input-search{
     padding-left: 10px;
 }

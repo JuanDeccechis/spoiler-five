@@ -24,7 +24,24 @@
     height: 50px;
     background-size: cover;
     padding: 0;
-    margin: 0 10px;
+    margin: 0 20px;
     border: none;
     background-image: url("./images/tiktok.svg");
+}
+
+.header-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.center{
+    margin: 0 20px;
+    display: none;
+}
+
+@media (min-width: 770px) {
+    .center{
+        display: inline;
+    }
 }

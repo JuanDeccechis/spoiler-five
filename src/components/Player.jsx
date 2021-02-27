@@ -59,23 +59,20 @@ class Player extends Component {
             <div>
                 <div className="player" >
                     <div className="player-left">
-                        <div className="player-song-name">
-                            <marquee>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis perspiciatis similique, neque explicabo porro accusantium nisi, quaerat fuga quos dolor officia, possimus quis quas voluptate quia odio autem doloribus aliquid?</marquee>
-                        </div>
-                        <button onClick={this.pause} className="icon refresh"></button>
+                        <marquee>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis perspiciatis similique, neque explicabo porro accusantium nisi, quaerat fuga quos dolor officia, possimus quis quas voluptate quia odio autem doloribus aliquid?</marquee>
                     </div>
                     <div className="player-principal">
                         <div className="player-principal-controls">
-                        <button onClick={this.pause} className="icon previous"></button>
+                        <button onClick={this.pause} className="icon icon-secondary previous"></button>
                         { play ? 
-                            <button onClick={this.pause} className="icon primary pause"></button>
+                            <button onClick={this.pause} className="icon pause"></button>
                         :
-                            <button onClick={this.play} className="icon primary play"></button>
+                            <button onClick={this.play} className="icon play"></button>
                         }
-                        <button onClick={this.pause} className="icon next"></button>
+                        <button onClick={this.pause} className="icon icon-secondary next"></button>
                         </div>
                         <div>
-                            <input id="player-control" type="range" min="0" max="30" value={countSecondsHeared}></input>
+                            <input id="player-control" className="player-control" type="range" min="0" max="30" value={countSecondsHeared}></input>
                         </div>
                     </div>
                     { movingVolume &&

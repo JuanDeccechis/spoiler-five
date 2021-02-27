@@ -26,17 +26,12 @@
 }
 
 .player-left{
-    max-width: calc(25vw);
+    max-width: 25vw;
+    margin: 0 10px;
     height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-}
-
-.player-song-name{
-    max-width: calc(25vw - 75px);
-    height: 100%;
-    overflow: hidden;
 }
 
 .player-principal{
@@ -53,6 +48,10 @@
     justify-content: space-around;
     width: 50vw;
     height: 7vh;
+}
+
+.player-control{
+    width: 100%;
 }
 
 .input-volume{

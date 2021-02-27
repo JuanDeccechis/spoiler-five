@@ -36,7 +36,7 @@ class Home extends Component {
 
                     <div className="page">
                         <div className="search">
-                            <input placeholder="Buscar" ref="inputSearch" onChange={this.handleChangeGlobalSearch} />
+                            <input placeholder="Buscar" ref="inputSearch" className="input-search" onChange={this.handleChangeGlobalSearch} />
                         </div>
                         {search &&
                             <Tabs></Tabs>
