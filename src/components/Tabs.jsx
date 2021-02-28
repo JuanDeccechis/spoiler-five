@@ -37,6 +37,7 @@ class Tabs extends Component {
 
     render() {
         const { seeFilters, selected } = this.state;
+        const { misAudios } = this.props;
         return (
             <div>
                 <div className="tabs">
@@ -46,21 +47,25 @@ class Tabs extends Component {
                                 Cancion
                         </Link>
                         </li>
+                        { !misAudios &&
                         <li className="tab-item">
                             <Link to="/playlist" >
                                 Playlist
                         </Link>
                         </li>
+                        }
                         <li className="tab-item">
                             <Link to="/podcast" >
                                 Podcast
                         </Link>
                         </li>
+                        { !misAudios &&
                         <li className="tab-item">
                             <Link to="/album" >
                                 Album
                         </Link>
                         </li>
+                        }
                     </ul>
                     <div>
                         <button onClick={this.handleClickToggleFilters}>filtros</button>

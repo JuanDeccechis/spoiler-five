@@ -38,7 +38,7 @@ class MiAudios extends Component {
                             <input placeholder="Buscar" ref="inputSearch" className="input-search" onChange={this.handleChangeGlobalSearch} />
                         </div>
                         {//search &&
-                            <Tabs></Tabs>
+                            <Tabs misAudios={true}></Tabs>
                         }
                         {
 
