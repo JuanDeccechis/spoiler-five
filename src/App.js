@@ -73,6 +73,10 @@ class App extends Component {
     title: "pepe",
     views: Math.floor(Math.random() * 10000),
     score: Math.floor(Math.random() * 5) + 1,
+    author: "The Beatles",
+    information: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis perspiciatis similique, neque explicabo porro accusantium nisi, quaerat fuga quos dolor officia, possimus quis quas voluptate quia odio autem doloribus aliquid?",
+    genre: "rock",
+    date: "16/09/1989"
   }, {
     title: "colo",
     views: Math.floor(Math.random() * 10000),

@@ -80,8 +80,8 @@
     background-image: url("./icons/search-black.svg");
 }
 
-.star{
-    background-image: url("./icons/star.svg");
+.star-complete{
+    background-image: url("./icons/star-complete.svg");
 }
 
 .like{
@@ -158,4 +158,8 @@
 
 .volume{
     background-image: url("./icons/volume.svg");
+}
+
+.star{
+    background-image: url("./icons/star.svg");
 }

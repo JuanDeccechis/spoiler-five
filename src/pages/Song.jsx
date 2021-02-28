@@ -44,6 +44,8 @@ class Song extends Component {
                         {search &&
                             <Tabs></Tabs>
                         }
+
+                        
                     </div>
                 </div>
             </div>

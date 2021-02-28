@@ -79,7 +79,7 @@ class Login extends Component {
 
 
                         <div className="player2" >
-                            <button className="icon star"></button>
+                            <button className="icon star-complete"></button>
                             <button className="icon like"></button>
                             <button className="icon like-complete"></button>
                             <button className="icon heart"></button>
