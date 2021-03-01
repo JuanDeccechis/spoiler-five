@@ -1,0 +1,9 @@
+.list-playlists{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.song-playlist-title{
+    border: 1px solid yellow;
+}

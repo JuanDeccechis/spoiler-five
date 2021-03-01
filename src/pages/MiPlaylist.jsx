@@ -10,6 +10,7 @@ class Playlist extends Component {
             isFavorite: false,
             score: 0,
             scoring: false,
+            songSelected: 0,
         };
         this.audio = "";
         this.handleChangeGlobalSearch = this.handleChangeGlobalSearch.bind(this);
@@ -40,6 +41,7 @@ class Playlist extends Component {
             previo.classList.remove("row-selected");
         }
         filas[index + 1].classList.add("row-selected");
+        this.setState({ songSelected: index });
     }
 
     toggleFavorite() {
@@ -57,7 +59,7 @@ class Playlist extends Component {
 
     render() {
         const { isMobile, toggleMenuMobile, showMenuMobile, search, user, setUser, globalState } = this.props;
-        const { playlistSelected, isFavorite, score, scoring } = this.state;
+        const { playlistSelected, isFavorite, score, scoring, songSelected } = this.state;
         return (
             <div>
                 <Header isMobile={isMobile} toggleMenuMobile={toggleMenuMobile} user={user} setUser={setUser}></Header>
@@ -88,13 +90,13 @@ class Playlist extends Component {
                                     <div className="playlist-resume">
                                         <div className="image mamacita"></div>
                                         <div className="playlist-resume-song-info">
-                                            <div className="one-line-text playlist-text-control">Audio: {globalState.signIn[0].audios[0].title} </div>
-                                            <div className="one-line-text playlist-text-control">Autor: {globalState.signIn[0].audios[0].author} </div>
-                                            <div className="one-line-text playlist-text-control">Genero: {globalState.signIn[0].audios[0].genre} </div>
-                                            <div className="one-line-text playlist-text-control">Lanzamiento: {globalState.signIn[0].audios[0].date} </div>
+                                            <div className="one-line-text playlist-text-control"> <b>Audio: </b> {globalState.signIn[0].audios[songSelected].title} </div>
+                                            <div className="one-line-text playlist-text-control"> <b>Autor: </b> {globalState.signIn[0].audios[songSelected].author} </div>
+                                            <div className="one-line-text playlist-text-control"> <b>Genero: </b> {globalState.signIn[0].audios[songSelected].genre} </div>
+                                            <div className="one-line-text playlist-text-control"> <b>Lanzamiento: </b> {globalState.signIn[0].audios[songSelected].date} </div>
                                         </div>
                                     </div>
-                                    <div className="three-lines-text playlist-text-control">Informacion: {globalState.signIn[0].audios[0].information} </div>
+                                    <div className="three-lines-text playlist-text-control"> <b>Informacion: </b>{globalState.signIn[0].audios[songSelected].information} </div>
                                     <div className="playlist-song-actions">
                                         <div>
                                             {score ? 
@@ -144,7 +146,7 @@ class Playlist extends Component {
                                         <tbody>
                                             {
                                                 globalState.signIn && globalState.signIn[0].audios.map((audio, index) =>
-                                                    <tr key={index} id={index} ref={index} className={index == 0 && "row-selected"} onClick={() => this.changeSong(index)}>
+                                                    <tr key={index} id={index} ref={index} className={index == 0 ? "row-selected" : ''} onClick={() => this.changeSong(index)}>
                                                         <td className="td-special"><div></div></td>
                                                         <td> {audio.title} </td>
                                                         <td> {audio.views} </td>

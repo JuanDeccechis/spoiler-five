@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom'
 
 class Audio extends Component {
     constructor(props) {
@@ -13,15 +13,18 @@ class Audio extends Component {
 
     render() {
         const { title, onClick } = this.props;
-        
+
+
         return (
             <div className="audio-preview" onClick={onClick}>
                 <div className="icon play play-fondo oculto "></div>
                 <div className="audio-content">
                     <div className="image mamacita"></div>
-                    <div className="audio-title one-line-text">
-                        {title}
-                    </div>
+                    <Link to="/song" >
+                        <div className="audio-title one-line-text">
+                            {title}
+                        </div>
+                    </Link>
                 </div>
             </div>
         )

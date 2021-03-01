@@ -9,6 +9,7 @@ import "./styles/audio.css";
 import "./styles/home.css";
 import "./styles/miPlaylist.css";
 import "./styles/miAudios.css";
+import "./styles/song.css";
 
 import { Routes } from './pages'
 
@@ -23,6 +24,7 @@ class App extends Component {
       isMobile: window.innerWidth <= 770,
       search: '',
       user: '',
+      playlists: [],
     }
     this.audio = "";
     this.toggleMenuMobile = this.toggleMenuMobile.bind(this);
@@ -81,22 +83,42 @@ class App extends Component {
     title: "colo",
     views: Math.floor(Math.random() * 10000),
     score: Math.floor(Math.random() * 5) + 1,
+    author: "Maluma",
+    information: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis perspiciatis similique, neque explicabo porro accusantium nisi, quaerat fuga quos dolor officia, possimus quis quas voluptate quia odio autem doloribus aliquid?",
+    genre: "pop latino",
+    date: "16/09/2017"
+  }, {
+    title: "Esta es la mejor cancion jamas escuchada en el mundo",
+    views: Math.floor(Math.random() * 10000),
+    score: Math.floor(Math.random() * 5) + 1,
+    author: "Maluma",
+    information: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis perspiciatis similique, neque explicabo porro accusantium nisi, quaerat fuga quos dolor officia, possimus quis quas voluptate quia odio autem doloribus aliquid?",
+    genre: "pop latino",
+    date: "16/09/2017"
   }, {
     title: "colo",
     views: Math.floor(Math.random() * 10000),
     score: Math.floor(Math.random() * 5) + 1,
+    author: "The Beatles",
+    information: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis perspiciatis similique, neque explicabo porro accusantium nisi, quaerat fuga quos dolor officia, possimus quis quas voluptate quia odio autem doloribus aliquid?",
+    genre: "rock",
+    date: "16/09/1989"
   }, {
     title: "colo",
     views: Math.floor(Math.random() * 10000),
     score: Math.floor(Math.random() * 5) + 1,
+    author: "The Beatles",
+    information: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis perspiciatis similique, neque explicabo porro accusantium nisi, quaerat fuga quos dolor officia, possimus quis quas voluptate quia odio autem doloribus aliquid?",
+    genre: "rock",
+    date: "16/09/1989"
   }, {
     title: "colo",
     views: Math.floor(Math.random() * 10000),
     score: Math.floor(Math.random() * 5) + 1,
-  }, {
-    title: "colo",
-    views: Math.floor(Math.random() * 10000),
-    score: Math.floor(Math.random() * 5) + 1,
+    author: "The Beatles",
+    information: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis perspiciatis similique, neque explicabo porro accusantium nisi, quaerat fuga quos dolor officia, possimus quis quas voluptate quia odio autem doloribus aliquid?",
+    genre: "rock",
+    date: "16/09/1989"
   }]
 }, {
   category: "mis mejor calificados",
@@ -113,8 +135,19 @@ class App extends Component {
 }, {
   title: "colo"
 }]
-  }]
-    }})
+  }],
+    playlists: [{
+        title: "playlist1"
+      }, {
+        title: "playlist2"
+      }, {
+        title: "playlist3"
+      }, {
+        title: "playlist4"
+      }, {
+        title: "playlist5"
+      }
+    ]}})
 
     //fetch("https://theaudiodb.p.rapidapi.com/playlist.php?s=Top_Popular_Tracks_2019", {
     //fetch("https://theaudiodb.p.rapidapi.com/playlist.php?format=track&user=Zag", {

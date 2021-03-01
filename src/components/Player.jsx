@@ -40,6 +40,7 @@ class Player extends Component {
         this.setState({
             play: true
         });
+        this.audio.volume=1;
         this.audio.play();
         this.intervalosAudio = setInterval(this.escucharCancion, 1000);
     }
@@ -88,7 +89,7 @@ class Player extends Component {
                         </div>
                     </div>
                     { movingVolume &&
-                        <input id="volume-control" type="range" min="0" max="100" className="input-volume" onInput={this.handleChangeVolume}></input>
+                        <input id="volume-control" type="range" min="0" max="100" defaultValue="100" className="input-volume" onInput={this.handleChangeVolume}></input>
                     }
                     <button onClick={this.handleMovingVolume} className="icon volume"></button>
                 </div>
