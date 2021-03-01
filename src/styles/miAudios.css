@@ -4,7 +4,7 @@
     margin: 0 auto;
     padding-top: 20px;
     overflow-y: scroll;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--background-color-elements-group);
 }
 
 @media (min-width: 770px){

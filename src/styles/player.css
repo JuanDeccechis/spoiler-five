@@ -1,12 +1,7 @@
-
-/** QUITAR**/
-.player2 {
-    background-color: darkgrey;
-}
 /*player*/
 .toolbar,
 .player {
-    background-color: blue;
+    background-color: var(--background-color-elements);
     position: fixed;
     left: 0;
     right: 0;

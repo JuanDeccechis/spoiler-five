@@ -3,6 +3,9 @@
     --transparent: rgba(0, 0, 0, 0);
     --white: rgba(247, 247, 247, 1);
     --black: rgba(43, 43, 43, 1);
+    --background-color-page: rgba(29,37,51,.8);
+    --background-color-elements: rgba(29,37,51,1);
+    --background-color-elements-group: rgba(29, 37, 51, 0.5);
 }
 button{
     background-color: var(--transparent);
@@ -16,6 +19,12 @@ ul {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+html, button, a{
+    color: var(--white);
+}
+.page{
+    background-color: var(--background-color-page);
 }
 
 /*menu y body*/
@@ -37,7 +46,7 @@ ul {
 }
 
 .menu{
-    background-color: red;
+    background-color: darkcyan;
     height: 100%;
     width: 100px;
     display: flex;
