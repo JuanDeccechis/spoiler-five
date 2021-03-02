@@ -9,6 +9,7 @@ class Playlist extends Component {
         };
         this.audio = "";
         this.handleChangeGlobalSearch = this.handleChangeGlobalSearch.bind(this);
+        this.toggleSelectedTab = this.toggleSelectedTab.bind(this);
     }
 
     componentDidMount() {
@@ -18,6 +19,16 @@ class Playlist extends Component {
         const { handleChangeGlobalSearch } = this.props;
         const { inputSearch } = this.refs;
         handleChangeGlobalSearch(inputSearch.value);
+    }
+
+    toggleSelectedTab(value) {
+        let previo = document.querySelector(".tab-selected");
+        if (previo) {
+            previo.classList.remove("tab-selected");
+        }
+        document.querySelectorAll(".tab-li-item")[value].classList.add("tab-selected");
+        let tabContent = document.querySelectorAll(".tab-item")[value].innerHTML;
+        this.setState({ selectedTab: tabContent });
     }
 
     render() {
@@ -33,7 +44,7 @@ class Playlist extends Component {
                             <input placeholder="Buscar" ref="inputSearch" className="input-search" onChange={this.handleChangeGlobalSearch} />
                         </div>
                         {search &&
-                            <Tabs></Tabs>
+                            <Tabs toggleSelectedTab={this.toggleSelectedTab}></Tabs>
                         }
                         { user? 
                             globalState.signOut && globalState.signIn.map((listAudios, index) =>

@@ -42,33 +42,34 @@ class Tabs extends Component {
             <div>
                 <div className="tabs">
                     <ul>
-                        <li className="tab-item">
-                            <Link to="/song" >
+                        <li className="tab-li-item" onClick={() => this.props.toggleSelectedTab(0)}>
+                            <Link to={`${window.location.href.includes("miAudios")? '/miAudios' : '/'}`}  className="tab-item" >
                                 Cancion
                         </Link>
                         </li>
                         { !misAudios &&
-                        <li className="tab-item">
-                            <Link to="/playlist" >
+                        <li className="tab-li-item" onClick={() => this.props.toggleSelectedTab(1)}>
+                            <Link to="/lists" className="tab-item" >
                                 Playlist
                         </Link>
                         </li>
                         }
-                        <li className="tab-item">
-                            <Link to="/podcast" >
+                        <li className="tab-li-item" onClick={() => {let podcastTab = 2; if(window.location.href.includes("miAudios")) podcastTab = 1;
+                            this.props.toggleSelectedTab(podcastTab)}}>
+                            <Link to={`${window.location.href.includes("miAudios")? '/miAudios' : '/'}`} className="tab-item" >
                                 Podcast
                         </Link>
                         </li>
                         { !misAudios &&
-                        <li className="tab-item">
-                            <Link to="/album" >
+                        <li className="tab-li-item" onClick={() => this.props.toggleSelectedTab(3)}>
+                            <Link to="/lists" className="tab-item" >
                                 Album
                         </Link>
                         </li>
                         }
                     </ul>
                     <div>
-                        <button onClick={this.handleClickToggleFilters}>filtros</button>
+                        <button className="tab-item"onClick={this.handleClickToggleFilters}>filtros</button>
                     </div>
 
                 </div>

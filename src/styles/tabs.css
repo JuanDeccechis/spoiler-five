@@ -11,7 +11,7 @@
     margin: 0;
     padding: 0;
     border: 0;
-    height: 6vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,16 +19,16 @@
 }
 
 .tab-item{
-    padding: 2vh;
-    border: 2px solid yellow;
+    padding: 1vh 2vh;
+    height: 100%;
+}
+
+.tab-item:hover{
+    cursor: pointer;
 }
 
 .tab-item .selected{
     border-bottom: 3px solid black;
-}
-
-.tab-item a{
-    text-decoration: none;
 }
 
 .filters{
@@ -46,5 +46,9 @@
 
 .pill.selected{
     background-color: darkcyan;
-    border: 2px;
+    border: 2px solid darkcyan;
+}
+
+.tab-selected{
+    border-bottom: 3px solid darkcyan;
 }

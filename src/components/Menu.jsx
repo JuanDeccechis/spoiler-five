@@ -37,7 +37,7 @@ class Menu extends Component {
                 */}                      <li className="menu-item">
                                 <Link to="/miPlaylist" >
                                     <button onClick={this.pause} className="icon menu-playlist2"></button>
-                                    <p>Playlist</p>
+                                    <p>Mis listas</p>
                                 </Link>
                             </li>
             {/*                <li className="menu-item">
@@ -67,7 +67,7 @@ class Menu extends Component {
                                <li className="menu-item">
                                 <Link to="/favorites" >
                                     <button onClick={this.pause} className="icon menu-favorites"></button>
-                                    <p>Favoritos</p>
+                                    <p>Audios favoritos</p>
                                 </Link>
                             </li>
                         </ul>

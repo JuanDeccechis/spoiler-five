@@ -1,42 +1,51 @@
 import React, { Component } from 'react'
-import { Menu, Tabs, Header } from "../components";
+import { Menu, Tabs, Header, Audio } from "../components";
 
-class Song extends Component {
+
+class ListDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchInSongs: true,
-            searchInPodcast: true,
-            searchInPlaylist: true,
-            searchInAlbum: true,
+            playlistSelected: false,
             isFavorite: false,
             score: 0,
             scoring: false,
             songSelected: 0,
-            selectPlaylist: -2,
+            addedToLists: false,
             addedToFavorites: false,
-        }
+        };
         this.audio = "";
-        //this.play = this.play.bind(this);
         this.handleChangeGlobalSearch = this.handleChangeGlobalSearch.bind(this);
+        this.setPlaylistSelected = this.setPlaylistSelected.bind(this);
+        this.changeSong = this.changeSong.bind(this);
         this.toggleFavorite = this.toggleFavorite.bind(this);
         this.setScoring = this.setScoring.bind(this);
         this.changeScore = this.changeScore.bind(this);
-        this.toggleAddToPlaylist = this.toggleAddToPlaylist.bind(this);
+        this.toggleAddToListPlaylist = this.toggleAddToListPlaylist.bind(this);
         this.toggleSelectedTab = this.toggleSelectedTab.bind(this);
-
     }
 
     componentDidMount() {
-        const { globalState, search } = this.props;
-        const { inputSearch } = this.refs;
-        inputSearch.value = search;
     }
 
     handleChangeGlobalSearch() {
         const { handleChangeGlobalSearch } = this.props;
         const { inputSearch } = this.refs;
         handleChangeGlobalSearch(inputSearch.value);
+    }
+
+    setPlaylistSelected() {
+        this.setState({ playlistSelected: true });
+    }
+
+    changeSong(index) {
+        let filas = document.querySelectorAll("tr");
+        let previo = document.querySelector(".row-selected");
+        if (previo) {
+            previo.classList.remove("row-selected");
+        }
+        filas[index + 1].classList.add("row-selected");
+        this.setState({ songSelected: index });
     }
 
     toggleFavorite() {
@@ -54,12 +63,10 @@ class Song extends Component {
         this.setState({ scoring: false, score: value });
     }
 
-    toggleAddToPlaylist(value) {
-        this.setState({ selectPlaylist: value });
-        if (value > -1) {
-            window.setTimeout(() => { this.setState({ selectPlaylist: -2 }); }, 3000);
-        }
-        
+    toggleAddToListPlaylist() {
+        this.setState({ addedToLists: true });
+        window.setTimeout(() => { this.setState({ addedToLists: false }); }, 3000);
+
     }
 
     toggleSelectedTab(value) {
@@ -69,12 +76,13 @@ class Song extends Component {
         }
         document.querySelectorAll(".tab-li-item")[value].classList.add("tab-selected");
         let tabContent = document.querySelectorAll(".tab-item")[value].innerHTML;
+        console.log(tabContent);
         this.setState({ selectedTab: tabContent });
     }
 
     render() {
         const { isMobile, toggleMenuMobile, showMenuMobile, search, user, setUser, globalState } = this.props;
-        const { isFavorite, score, scoring, songSelected, selectPlaylist, addedToFavorites } = this.state;
+        const { playlistSelected, isFavorite, score, scoring, songSelected, addedToLists, addedToFavorites } = this.state;
         return (
             <div>
                 <Header isMobile={isMobile} toggleMenuMobile={toggleMenuMobile} user={user} setUser={setUser}></Header>
@@ -88,16 +96,18 @@ class Song extends Component {
                         {search &&
                             <Tabs toggleSelectedTab={this.toggleSelectedTab}></Tabs>
                         }
-                        <div className="playlist-resume">
+                        <div>
+                        <div>
+                                    <div className="playlist-resume">
                                         <div className="image mamacita"></div>
                                         <div className="playlist-resume-song-info">
-                                            <div className="one-line-text playlist-text-control"> <b>Audio: </b> {globalState && globalState.signIn[0].audios[songSelected].title} </div>
-                                            <div className="one-line-text playlist-text-control"> <b>Autor: </b> {globalState && globalState.signIn[0].audios[songSelected].author} </div>
-                                            <div className="one-line-text playlist-text-control"> <b>Genero: </b> {globalState && globalState.signIn[0].audios[songSelected].genre} </div>
-                                            <div className="one-line-text playlist-text-control"> <b>Lanzamiento: </b> {globalState && globalState.signIn[0].audios[songSelected].date} </div>
+                                            <div className="one-line-text playlist-text-control"> <b>Audio: </b> {globalState.signIn[0].audios[songSelected].title} </div>
+                                            <div className="one-line-text playlist-text-control"> <b>Autor: </b> {globalState.signIn[0].audios[songSelected].author} </div>
+                                            <div className="one-line-text playlist-text-control"> <b>Genero: </b> {globalState.signIn[0].audios[songSelected].genre} </div>
+                                            <div className="one-line-text playlist-text-control"> <b>Lanzamiento: </b> {globalState.signIn[0].audios[songSelected].date} </div>
                                         </div>
                                     </div>
-                                    <div className="three-lines-text playlist-text-control"> <b>Informacion: </b>{globalState && globalState.signIn[0].audios[songSelected].information} </div>
+                                    <div className="three-lines-text playlist-text-control"> <b>Informacion: </b>{globalState.signIn[0].audios[songSelected].information} </div>
                                     <div className="separacion"></div>
                                     <div className="playlist-song-actions">
                                         <div>
@@ -125,32 +135,51 @@ class Song extends Component {
                                             <button className="icon heart" onClick={this.toggleFavorite}></button>
                                         }
                                         <button className="icon share"></button>
-                                        <button className="icon add" onClick={() => this.toggleAddToPlaylist(-1)}></button>
-
-
+                                        <button className="icon add"  onClick={() => this.toggleAddToListPlaylist()}></button>
+                                        
                                     </div>
                                     {addedToFavorites && 
                                         <div>Agregado a favoritos</div>
                                     }
-                                    {selectPlaylist == -1 && globalState &&
-                                        <div className="list-playlists"> 
-                                        {globalState.playlists.map((playlist, index) =>
-                                        <div className="song-playlist-title" key={index} onClick={() => this.toggleAddToPlaylist(index)}> {playlist.title} </div>
-                                    )}</div>
-                                    }
-                                    {selectPlaylist > -1 && 
-                                        <div>Agregado a {globalState.playlists[selectPlaylist].title}</div>
-                                    }
+                                    {addedToLists && 
+                                        <div>Agregado a Mis listas</div>
+                                        }
                                     <div className="separacion"></div>
-                                    <div className="comments">
-
-                                    </div>
-
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <td className="td-special"></td>
+                                                <td>
+                                                    Nombre
+                                            </td>
+                                                <td>
+                                                    Reproducciones
+                                            </td>
+                                                <td>
+                                                    Calificacion
+                                            </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {
+                                                globalState.signIn && globalState.signIn[0].audios.map((audio, index) =>
+                                                    <tr key={index} id={index} ref={index} className={index == 0 ? "row-selected" : ''} onClick={() => this.changeSong(index)}>
+                                                        <td className="td-special"><div></div></td>
+                                                        <td> {audio.title} </td>
+                                                        <td> {audio.views} </td>
+                                                        <td> {audio.score} </td>
+                                                    </tr>
+                                                )
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                        </div>
                     </div>
                 </div>
             </div>
         )
     }
-};
+}
 
-export default Song;
+export default ListDetails;

@@ -11,6 +11,7 @@ class Playlist extends Component {
             score: 0,
             scoring: false,
             songSelected: 0,
+            addedToFavorites: false,
         };
         this.audio = "";
         this.handleChangeGlobalSearch = this.handleChangeGlobalSearch.bind(this);
@@ -19,6 +20,7 @@ class Playlist extends Component {
         this.toggleFavorite = this.toggleFavorite.bind(this);
         this.setScoring = this.setScoring.bind(this);
         this.changeScore = this.changeScore.bind(this);
+        this.toggleSelectedTab = this.toggleSelectedTab.bind(this);
     }
 
     componentDidMount() {
@@ -47,6 +49,8 @@ class Playlist extends Component {
     toggleFavorite() {
         const { isFavorite } = this.state;
         this.setState({ isFavorite: !isFavorite });
+        this.setState({ addedToFavorites: !isFavorite });
+        window.setTimeout(() => { this.setState({ addedToFavorites: false }); }, 3000);
     }
 
     setScoring() {
@@ -57,9 +61,19 @@ class Playlist extends Component {
         this.setState({ scoring: false, score: value });
     }
 
+    toggleSelectedTab(value) {
+        let previo = document.querySelector(".tab-selected");
+        if (previo) {
+            previo.classList.remove("tab-selected");
+        }
+        document.querySelectorAll(".tab-li-item")[value].classList.add("tab-selected");
+        let tabContent = document.querySelectorAll(".tab-item")[value].innerHTML;
+        this.setState({ selectedTab: tabContent });
+    }
+
     render() {
         const { isMobile, toggleMenuMobile, showMenuMobile, search, user, setUser, globalState } = this.props;
-        const { playlistSelected, isFavorite, score, scoring, songSelected } = this.state;
+        const { playlistSelected, isFavorite, score, scoring, songSelected, addedToFavorites } = this.state;
         return (
             <div>
                 <Header isMobile={isMobile} toggleMenuMobile={toggleMenuMobile} user={user} setUser={setUser}></Header>
@@ -71,13 +85,13 @@ class Playlist extends Component {
                             <input placeholder="Buscar" ref="inputSearch" className="input-search" onChange={this.handleChangeGlobalSearch} />
                         </div>
                         {search &&
-                            <Tabs></Tabs>
+                            <Tabs toggleSelectedTab={this.toggleSelectedTab}></Tabs>
                         }
                         <div>
                             {!playlistSelected ?
                                 <div>
-                                    <p>Mis Playlist</p>
-                                    <div className="results">
+                                    <p>Mis listas</p>
+                                    <div className="results-complete">
                                         {
                                             globalState.signIn && globalState.signIn[0].audios.map((audio, index) =>
                                                 <Audio title={audio.title} key={index} onClick={this.setPlaylistSelected} />
@@ -97,6 +111,7 @@ class Playlist extends Component {
                                         </div>
                                     </div>
                                     <div className="three-lines-text playlist-text-control"> <b>Informacion: </b>{globalState.signIn[0].audios[songSelected].information} </div>
+                                    <div className="separacion"></div>
                                     <div className="playlist-song-actions">
                                         <div>
                                             {score ? 
@@ -127,6 +142,9 @@ class Playlist extends Component {
 
 
                                     </div>
+                                    {addedToFavorites && 
+                                        <div>Agregado a favoritos</div>
+                                    }
                                     <div className="separacion"></div>
                                     <table>
                                         <thead>

@@ -12,6 +12,7 @@ class Login extends Component {
         };
         this.handleChangeGlobalSearch = this.handleChangeGlobalSearch.bind(this);
         this.handleClickSignIn = this.handleClickSignIn.bind(this);
+        this.toggleSelectedTab = this.toggleSelectedTab.bind(this);
     }
 
     componentDidMount() {
@@ -36,6 +37,17 @@ class Login extends Component {
         }
     }
 
+    toggleSelectedTab(value) {
+        let previo = document.querySelector(".tab-selected");
+        if (previo) {
+            previo.classList.remove("tab-selected");
+        }
+        document.querySelectorAll(".tab-li-item")[value].classList.add("tab-selected");
+        let tabContent = document.querySelectorAll(".tab-item")[value].innerHTML;
+        console.log(tabContent);
+        this.setState({ selectedTab: tabContent });
+    }
+
     render() {
         const { isMobile, toggleMenuMobile, showMenuMobile, search, user, setUser } = this.props;
         const { conditionForSign } = this.state;
@@ -51,7 +63,7 @@ class Login extends Component {
                             <input placeholder="Buscar" ref="inputSearch" className="input-search" onChange={this.handleChangeGlobalSearch} />
                         </div>
                         {search &&
-                            <Tabs></Tabs>
+                            <Tabs toggleSelectedTab={this.toggleSelectedTab}></Tabs>
                         }
 
                         <form action="" method="post">

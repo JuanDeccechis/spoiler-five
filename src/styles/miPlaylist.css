@@ -33,6 +33,7 @@ td{
     flex-direction: row;
     justify-content: flex-start;
     width: 100%;
+    padding: 2vh;
 }
 
 .playlist-song-actions{

@@ -20,11 +20,12 @@ class Audio extends Component {
                 <div className="icon play play-fondo oculto "></div>
                 <div className="audio-content">
                     <div className="image mamacita"></div>
-                    <Link to="/song" >
+                        <Link to={`${window.location.href.includes("list")? '/listDetails' : '/song'}`} >
                         <div className="audio-title one-line-text">
                             {title}
                         </div>
                     </Link>
+                    
                 </div>
             </div>
         )
