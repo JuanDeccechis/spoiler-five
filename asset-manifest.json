@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/spoiler-five/static/css/main.3f7ecb45.chunk.css",
-    "main.js": "/spoiler-five/static/js/main.48975c79.chunk.js",
-    "main.js.map": "/spoiler-five/static/js/main.48975c79.chunk.js.map",
+    "main.css": "/spoiler-five/static/css/main.4a8590fe.chunk.css",
+    "main.js": "/spoiler-five/static/js/main.f7826049.chunk.js",
+    "main.js.map": "/spoiler-five/static/js/main.f7826049.chunk.js.map",
     "runtime-main.js": "/spoiler-five/static/js/runtime-main.0457369b.js",
     "runtime-main.js.map": "/spoiler-five/static/js/runtime-main.0457369b.js.map",
     "static/js/2.b41d2633.chunk.js": "/spoiler-five/static/js/2.b41d2633.chunk.js",
     "static/js/2.b41d2633.chunk.js.map": "/spoiler-five/static/js/2.b41d2633.chunk.js.map",
     "index.html": "/spoiler-five/index.html",
-    "static/css/main.3f7ecb45.chunk.css.map": "/spoiler-five/static/css/main.3f7ecb45.chunk.css.map",
+    "static/css/main.4a8590fe.chunk.css.map": "/spoiler-five/static/css/main.4a8590fe.chunk.css.map",
     "static/js/2.b41d2633.chunk.js.LICENSE.txt": "/spoiler-five/static/js/2.b41d2633.chunk.js.LICENSE.txt",
     "static/media/icons.css": "/spoiler-five/static/media/volume.738280b9.svg",
     "static/media/miPlaylist.css": "/spoiler-five/static/media/play.2687733c.svg",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.0457369b.js",
     "static/js/2.b41d2633.chunk.js",
-    "static/css/main.3f7ecb45.chunk.css",
-    "static/js/main.48975c79.chunk.js"
+    "static/css/main.4a8590fe.chunk.css",
+    "static/js/main.f7826049.chunk.js"
   ]
 }
