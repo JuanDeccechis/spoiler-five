@@ -88,6 +88,7 @@ class Song extends Component {
                         {search &&
                             <Tabs toggleSelectedTab={this.toggleSelectedTab}></Tabs>
                         }
+                        <div className="playlist-desktop">
                         <div className="playlist-resume">
                                         <div className="image mamacita"></div>
                                         <div className="playlist-resume-song-info">
@@ -97,7 +98,7 @@ class Song extends Component {
                                             <div className="one-line-text playlist-text-control"> <b>Lanzamiento: </b> {globalState && globalState.signIn[0].audios[songSelected].date} </div>
                                         </div>
                                     </div>
-                                    <div className="three-lines-text playlist-text-control"> <b>Informacion: </b>{globalState && globalState.signIn[0].audios[songSelected].information} </div>
+                                    <div className="three-lines-text playlist-text-control"> <b>Informacion: </b>{globalState && globalState.signIn[0].audios[songSelected].information} {globalState && globalState.signIn[0].audios[songSelected].information} </div>
                                     <div className="separacion"></div>
                                     <div className="playlist-song-actions">
                                         <div>
@@ -145,7 +146,7 @@ class Song extends Component {
                                     <div className="comments">
 
                                     </div>
-
+</div>
                     </div>
                 </div>
             </div>

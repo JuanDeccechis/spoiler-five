@@ -99,35 +99,6 @@ class Home extends Component {
 
 
 
-
-
-
-
-                        {searchInSongs &&
-                            <div>
-                                <div className="separacion"></div>
-                            </div>
-                        }
-                        {searchInPodcast &&
-                            <div>
-                                <div className="separacion"></div>
-
-                            </div>
-                        }
-                        {searchInPlaylist &&
-                            <div>
-                                <div className="separacion"></div>
-
-                            </div>
-                        }
-                        {searchInAlbum &&
-                            <div>
-                                <div className="separacion"></div>
-
-                            </div>
-                        }
-
-
                     </div>
                 </div>
             </div>

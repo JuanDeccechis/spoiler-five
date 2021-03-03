@@ -100,7 +100,7 @@ class Playlist extends Component {
                                     </div>
                                 </div>
                                 :
-                                <div>
+                                <div className="playlist-desktop">
                                     <div className="playlist-resume">
                                         <div className="image mamacita"></div>
                                         <div className="playlist-resume-song-info">

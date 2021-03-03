@@ -96,28 +96,22 @@ class ListDetails extends Component {
                         {search &&
                             <Tabs toggleSelectedTab={this.toggleSelectedTab}></Tabs>
                         }
-                        <div>
-                        <div>
-                                    <div className="playlist-resume">
-                                        <div className="image mamacita"></div>
-                                        <div className="playlist-resume-song-info">
-                                            <div className="one-line-text playlist-text-control"> <b>Audio: </b> {globalState.signIn[0].audios[songSelected].title} </div>
-                                            <div className="one-line-text playlist-text-control"> <b>Autor: </b> {globalState.signIn[0].audios[songSelected].author} </div>
-                                            <div className="one-line-text playlist-text-control"> <b>Genero: </b> {globalState.signIn[0].audios[songSelected].genre} </div>
-                                            <div className="one-line-text playlist-text-control"> <b>Lanzamiento: </b> {globalState.signIn[0].audios[songSelected].date} </div>
-                                        </div>
-                                    </div>
-                                    <div className="three-lines-text playlist-text-control"> <b>Informacion: </b>{globalState.signIn[0].audios[songSelected].information} </div>
-                                    <div className="separacion"></div>
-                                    <div className="playlist-song-actions">
-                                        <div>
-                                            {score ? 
-                                                <div>
-                                                    <button className="icon star-complete"></button>
-                                                    {score} / 5
-                                                </div>
-                                            :
-                                            scoring ? 
+                        <div className="playlist-desktop">
+                            <div className="playlist-resume">
+                                <div className="image mamacita"></div>
+                                <div className="playlist-resume-song-info">
+                                    <div className="one-line-text playlist-text-control"> <b>Audio: </b> {globalState.signIn[0].audios[songSelected].title} </div>
+                                    <div className="one-line-text playlist-text-control"> <b>Autor: </b> {globalState.signIn[0].audios[songSelected].author} </div>
+                                    <div className="one-line-text playlist-text-control"> <b>Genero: </b> {globalState.signIn[0].audios[songSelected].genre} </div>
+                                    <div className="one-line-text playlist-text-control"> <b>Lanzamiento: </b> {globalState.signIn[0].audios[songSelected].date} </div>
+                                </div>
+                            </div>
+                            <div className="three-lines-text playlist-text-control"> <b>Informacion: </b>{globalState.signIn[0].audios[songSelected].information} </div>
+                            <div className="separacion"></div>
+                            <div className="playlist-song-actions">
+                                <div>
+                                    {
+                                        scoring &&
                                             <div>
                                                 <button className="icon star" onClick={() => this.changeScore(1)}></button>
                                                 <button className="icon star" onClick={() => this.changeScore(2)}></button>
@@ -125,55 +119,61 @@ class ListDetails extends Component {
                                                 <button className="icon star" onClick={() => this.changeScore(4)}></button>
                                                 <button className="icon star" onClick={() => this.changeScore(5)}></button>
                                             </div>
-                                                :
-                                                <button className="icon star" onClick={this.setScoring}></button>
                                             }
-                                        </div>
-                                        {isFavorite ?
-                                            <button className="icon heart-complete" onClick={this.toggleFavorite}></button>
-                                        :
-                                            <button className="icon heart" onClick={this.toggleFavorite}></button>
-                                        }
-                                        <button className="icon share"></button>
-                                        <button className="icon add"  onClick={() => this.toggleAddToListPlaylist()}></button>
-                                        
-                                    </div>
-                                    {addedToFavorites && 
-                                        <div>Agregado a favoritos</div>
-                                    }
-                                    {addedToLists && 
-                                        <div>Agregado a Mis listas</div>
-                                        }
-                                    <div className="separacion"></div>
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <td className="td-special"></td>
-                                                <td>
-                                                    Nombre
-                                            </td>
-                                                <td>
-                                                    Reproducciones
-                                            </td>
-                                                <td>
-                                                    Calificacion
-                                            </td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {
-                                                globalState.signIn && globalState.signIn[0].audios.map((audio, index) =>
-                                                    <tr key={index} id={index} ref={index} className={index == 0 ? "row-selected" : ''} onClick={() => this.changeSong(index)}>
-                                                        <td className="td-special"><div></div></td>
-                                                        <td> {audio.title} </td>
-                                                        <td> {audio.views} </td>
-                                                        <td> {audio.score} </td>
-                                                    </tr>
-                                                )
-                                            }
-                                        </tbody>
-                                    </table>
                                 </div>
+                                {score ?
+                                        <span>
+                                            <button className="icon star-complete"></button>
+                                            {score} / 5
+                                                </span>
+                                :
+                                !scoring &&
+                                            <button className="icon star" onClick={this.setScoring}></button>
+                                }
+                                {isFavorite ?
+                                    <button className="icon heart-complete" onClick={this.toggleFavorite}></button>
+                                    :
+                                    <button className="icon heart" onClick={this.toggleFavorite}></button>
+                                }
+                                <button className="icon share"></button>
+                                <button className="icon add" onClick={() => this.toggleAddToListPlaylist()}></button>
+
+                            </div>
+                            {addedToFavorites &&
+                                <div>Agregado a favoritos</div>
+                            }
+                            {addedToLists &&
+                                <div>Agregado a Mis listas</div>
+                            }
+                            <div className="separacion"></div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td className="td-special"></td>
+                                        <td>
+                                            Nombre
+                                            </td>
+                                        <td>
+                                            Reproducciones
+                                            </td>
+                                        <td>
+                                            Calificacion
+                                            </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        globalState.signIn && globalState.signIn[0].audios.map((audio, index) =>
+                                            <tr key={index} id={index} ref={index} className={index == 0 ? "row-selected" : ''} onClick={() => this.changeSong(index)}>
+                                                <td className="td-special"><div></div></td>
+                                                <td> {audio.title} </td>
+                                                <td> {audio.views} </td>
+                                                <td> {audio.score} </td>
+                                            </tr>
+                                        )
+                                    }
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

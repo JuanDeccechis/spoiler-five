@@ -7,6 +7,9 @@
     --background-color-elements: rgba(29,37,51,1);
     --background-color-elements-group: rgba(29, 37, 51, 0.5);
 }
+html{
+    background-color: var(--background-color-page);
+}
 button{
     background-color: var(--transparent);
 }
@@ -26,8 +29,9 @@ a{
 html, button, a{
     color: var(--white);
 }
-.page{
-    background-color: var(--background-color-page);
+p{
+    margin-top: 5px;
+    margin-bottom: 3px; 
 }
 
 /*menu y body*/
@@ -44,7 +48,7 @@ html, button, a{
 @media (min-width: 770px) {
     .page-content{
         top: 9vh;
-        height: 82vh;
+        height: 80vh;
     }
 }
 
@@ -94,7 +98,7 @@ html, button, a{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    border-bottom: 2px solid brown;
+    border-bottom: 2px solid var(--white);
     padding: 10px 0 5px 0;
 }
 

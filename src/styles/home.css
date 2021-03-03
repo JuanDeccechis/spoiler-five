@@ -9,6 +9,18 @@
     background-color: var(--background-color-elements-group);
 }
 
+@media (min-width: 770px) {
+    .results{
+        height: 23vh;
+        overflow-x: hidden;
+        width: calc(90vw - 200px);
+    }
+
+    .results:hover{
+        overflow-x: scroll;
+    }
+}
+
 .separacion{
     height: 20px;
 }
