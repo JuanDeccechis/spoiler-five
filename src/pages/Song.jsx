@@ -165,7 +165,7 @@ class Song extends Component {
                                     }
                                     <div className="separacion"></div>
                                     <div className="comments">
-                                        <p>Comentarios</p>
+                                        <b>Comentarios</b>
                                         <div className="add-comment">
                                             <div className="icon user-loged"></div>
                                             <div className="add-comment-body">
@@ -173,6 +173,7 @@ class Song extends Component {
                                                 <p>Deja tu comentario</p>
                                                 <textarea rows="3" placeholder="Escribe aqui tu comentario"></textarea>
                                             </div>
+                                            <button className="send-comment">Enviar</button>
                                             </div>
                                         </div>
                                         <div className="separacion"></div>

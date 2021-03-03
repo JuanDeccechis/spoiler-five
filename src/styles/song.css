@@ -22,7 +22,18 @@
 }
 
 .comment{
-    width: 80%;
+    width: 75%;
+    display: inline-block;
+}
+
+@media (min-width: 770px) {
+    .comment{
+        width: 80%;
+    }
+}
+
+.send-comment{
+    margin: 0 10px;
 }
 
 .add-comment-body{
