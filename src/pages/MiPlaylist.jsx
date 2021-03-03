@@ -113,14 +113,9 @@ class Playlist extends Component {
                                     <div className="three-lines-text playlist-text-control"> <b>Informacion: </b>{globalState.signIn[0].audios[songSelected].information} </div>
                                     <div className="separacion"></div>
                                     <div className="playlist-song-actions">
-                                        <div>
-                                            {score ? 
-                                                <div>
-                                                    <button className="icon star-complete"></button>
-                                                    {score} / 5
-                                                </div>
-                                            :
-                                            scoring ? 
+                                    <div>
+                                    {
+                                        scoring &&
                                             <div>
                                                 <button className="icon star" onClick={() => this.changeScore(1)}></button>
                                                 <button className="icon star" onClick={() => this.changeScore(2)}></button>
@@ -128,10 +123,17 @@ class Playlist extends Component {
                                                 <button className="icon star" onClick={() => this.changeScore(4)}></button>
                                                 <button className="icon star" onClick={() => this.changeScore(5)}></button>
                                             </div>
-                                                :
-                                                <button className="icon star" onClick={this.setScoring}></button>
                                             }
-                                        </div>
+                                </div>
+                                {score ?
+                                        <span>
+                                            <button className="icon star-complete"></button>
+                                            {score} / 5
+                                                </span>
+                                :
+                                !scoring &&
+                                            <button className="icon star" onClick={this.setScoring}></button>
+                                }
                                         {isFavorite ?
                                             <button className="icon heart-complete" onClick={this.toggleFavorite}></button>
                                         :
