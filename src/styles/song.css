@@ -43,9 +43,24 @@ textarea{
     height: 20px;
 }
 
+.comment-buttons span{
+    margin-left: 5px;
+}
+
 .comment-text{
     max-height: 100px;
     overflow-y: scroll;
+}
+
+
+@media (min-width: 770px) {
+    .comment-text{
+        overflow-y: hidden;
+    }
+
+    .comment-text:hover{
+        overflow-y: scroll;
+    }
 }
 
 .comment-body{

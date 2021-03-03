@@ -210,6 +210,7 @@ class Song extends Component {
                                             </div>
                                             </div>
                                         </div>
+                                        <div className="separacion"></div>
                                         <div className="add-comment">
                                             <div className="icon user"></div>
                                             <div className="comment-body">
