@@ -66,12 +66,6 @@ class Login extends Component {
                     <Menu isMobile={isMobile} showMenuMobile={showMenuMobile} user={user} setUser={setUser}></Menu>
 
                     <div className="page">
-                        <div className="search">
-                            <input placeholder="Buscar" ref="inputSearch" className="input-search" onChange={this.handleChangeGlobalSearch} />
-                        </div>
-                        {search &&
-                            <Tabs toggleSelectedTab={this.toggleSelectedTab}></Tabs>
-                        }
 
                         <form action="" method="post">
                             <div className="login-input">

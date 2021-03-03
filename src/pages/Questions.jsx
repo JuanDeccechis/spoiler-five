@@ -52,7 +52,7 @@ class Questions extends Component {
             <div>
                 <Header isMobile={isMobile} toggleMenuMobile={toggleMenuMobile} user={user} setUser={setUser}></Header>
                 <div className="page-content">
-                <div class="calendarioEventos">
+                <div>
         <h2>Preguntanos</h2>
         <p>Puedes contactarnos al 0800-sp.five, en caso que la siguiente lista no resuelva tu consulta.</p>
         <div className="questions-form">
