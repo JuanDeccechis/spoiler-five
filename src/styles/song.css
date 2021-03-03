@@ -60,7 +60,7 @@ textarea{
 
 .comment-text{
     max-height: 100px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 
@@ -70,7 +70,7 @@ textarea{
     }
 
     .comment-text:hover{
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 }
 

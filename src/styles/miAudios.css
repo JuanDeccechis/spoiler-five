@@ -3,7 +3,7 @@
     height: calc(80vh - 133px);
     margin: 0 auto;
     padding-top: 20px;
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: var(--background-color-elements-group);
 }
 
