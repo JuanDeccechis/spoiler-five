@@ -3,3 +3,54 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
+.comments{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color-elements-group);
+}
+
+.add-comment{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    padding: 5px;
+    text-align: left;
+    border-bottom: 2px solid var(--black);
+    justify-content: flex-start;
+}
+
+.comment{
+    width: 80%;
+}
+
+.add-comment-body{
+    width: 90%;
+}
+
+textarea{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.comment-buttons{
+    width: 85px;
+}
+
+.comment-buttons button{
+    width: 20px;
+    height: 20px;
+}
+
+.comment-text{
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+.comment-body{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -54,6 +54,7 @@ td{
     max-height: 60px;
     width: 90%;
     margin: 0 auto;
+    text-align: inherit;
 }
 
 @media (min-width: 770px){

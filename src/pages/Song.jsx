@@ -15,6 +15,11 @@ class Song extends Component {
             songSelected: 0,
             selectPlaylist: -2,
             addedToFavorites: false,
+            like: false,
+            dislike: false,
+            likesCount: Math.floor(Math.random() * 50),
+            dislikesCount: Math.floor(Math.random() * 50),
+
         }
         this.audio = "";
         //this.play = this.play.bind(this);
@@ -24,6 +29,8 @@ class Song extends Component {
         this.changeScore = this.changeScore.bind(this);
         this.toggleAddToPlaylist = this.toggleAddToPlaylist.bind(this);
         this.toggleSelectedTab = this.toggleSelectedTab.bind(this);
+        this.toggleLikeComment = this.toggleLikeComment.bind(this);
+        this.toggleDislikeComment = this.toggleDislikeComment.bind(this);
 
     }
 
@@ -72,9 +79,19 @@ class Song extends Component {
         this.setState({ selectedTab: tabContent });
     }
 
+    toggleLikeComment(){
+        const { like } = this.state;
+        this.setState({ like: !like });
+    }
+    
+    toggleDislikeComment(){
+        const { dislike } = this.state;
+        this.setState({ dislike: !dislike });
+    }
+    
     render() {
         const { isMobile, toggleMenuMobile, showMenuMobile, search, user, setUser, globalState } = this.props;
-        const { isFavorite, score, scoring, songSelected, selectPlaylist, addedToFavorites } = this.state;
+        const { isFavorite, score, scoring, songSelected, selectPlaylist, addedToFavorites, like, dislike, likesCount, dislikesCount } = this.state;
         return (
             <div>
                 <Header isMobile={isMobile} toggleMenuMobile={toggleMenuMobile} user={user} setUser={setUser}></Header>
@@ -148,7 +165,85 @@ class Song extends Component {
                                     }
                                     <div className="separacion"></div>
                                     <div className="comments">
-                                        aca van los comentarios
+                                        <p>Comentarios</p>
+                                        <div className="add-comment">
+                                            <div className="icon user-loged"></div>
+                                            <div className="add-comment-body">
+                                            <div className="comment">
+                                                <p>Deja tu comentario</p>
+                                                <textarea rows="3" placeholder="Escribe aqui tu comentario"></textarea>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div className="separacion"></div>
+                                        <div className="add-comment">
+                                            <div className="icon user"></div>
+                                            <div className="comment-body">
+                                            <div className="comment">
+                                                <b>Pepito</b>
+                                                <p className="comment-text">Excelente tema</p>
+                                            </div>
+                                            <div className="comment-buttons">
+                                                {like ? 
+                                                    <span>
+                                                    <button className="icon like-complete" onClick={this.toggleLikeComment}></button>
+                                                    {likesCount+1}
+                                                        </span>
+                                                :
+                                                    
+                                                <span>
+                                                <button className="icon like" onClick={this.toggleLikeComment}></button>
+                                                {likesCount}
+                                                    </span>
+                                                }
+                                                {dislike ? 
+                                                <span>
+                                                    <button className="icon dislike-complete" onClick={this.toggleDislikeComment}></button>
+                                                    {dislikesCount+1}
+                                                    </span>
+                                                :
+                                                <span>
+                                                <button className="icon dislike" onClick={this.toggleDislikeComment}></button>
+                                                {dislikesCount}
+                                                </span>
+                                                }
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div className="add-comment">
+                                            <div className="icon user"></div>
+                                            <div className="comment-body">
+                                            <div className="comment">
+                                                <b>Luisito</b>
+                                                <p className="comment-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius velit aspernatur est enim vitae. Consectetur eaque molestias commodi molestiae autem? A consectetur qui incidunt officiis, enim facilis tenetur quidem commodi!</p>
+                                            </div>
+                                            <div className="comment-buttons">
+                                                {like ? 
+                                                    <span>
+                                                    <button className="icon like-complete" onClick={this.toggleLikeComment}></button>
+                                                    {likesCount+1}
+                                                        </span>
+                                                :
+                                                    
+                                                <span>
+                                                <button className="icon like" onClick={this.toggleLikeComment}></button>
+                                                {likesCount}
+                                                    </span>
+                                                }
+                                                {dislike ? 
+                                                <span>
+                                                    <button className="icon dislike-complete" onClick={this.toggleDislikeComment}></button>
+                                                    {dislikesCount+1}
+                                                    </span>
+                                                :
+                                                <span>
+                                                <button className="icon dislike" onClick={this.toggleDislikeComment}></button>
+                                                {dislikesCount}
+                                                </span>
+                                                }
+                                            </div>
+                                            </div>
+                                        </div>
                                     </div>
 </div>
                     </div>
