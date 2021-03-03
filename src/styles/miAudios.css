@@ -1,6 +1,6 @@
 .results-complete{
     width: calc(100vw);
-    height: calc(80vh - 50px);
+    height: calc(80vh - 133px);
     margin: 0 auto;
     padding-top: 20px;
     overflow-y: scroll;
@@ -11,6 +11,7 @@
     .results-complete{
         width: calc(100vw - 200px);
         height: calc(80vh - 90px);
+        height: calc(80vh - 133px);
     }
 }
 

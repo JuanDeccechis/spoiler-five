@@ -1,0 +1,11 @@
+.primary-button{
+    background-color: darkcyan;
+}
+
+form{
+    padding: 2vh;
+}
+
+.login-input{
+    height: 25px;
+}

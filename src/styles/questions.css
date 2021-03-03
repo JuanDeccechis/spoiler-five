@@ -1,0 +1,46 @@
+
+.accordion-content {
+    max-height: 0;
+    height: auto;
+    overflow: hidden;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    transition-property: max-height;
+}
+
+.animaAccordion {
+    max-height: 320px;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    transition-property: max-height;
+}
+
+.accordion{
+    width: 90%;
+    border: 1px solid var(--white);
+}
+
+.accordion-title{
+    height: 25px;
+    font-weight: bold;
+}
+
+.accordion-title:hover{
+    cursor: pointer;
+}
+
+.questions-form{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.questions-titles{
+    width: 40%;
+}
+
+.questions-titles li{
+    font-weight: bold;
+
+}

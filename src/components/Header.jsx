@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 class Header extends Component {
     constructor(props) {
         super(props);
-        this.state={
-            notifications : 0,
-            points : 0,
+        this.state = {
+            notifications: 0,
+            points: 0,
         }
     }
 
@@ -18,32 +18,35 @@ class Header extends Component {
                 <div className="header-left">
                     {user && isMobile ?
                         <button onClick={toggleMenuMobile} className="icon menu-icon"></button>
-                    :
+                        :
                         <Link to="/" >
                             <div className="logo"></div>
                         </Link>
                     }
-                    
+
                 </div>
                 <div></div>
                 <div>
                     {user ?
-                    <div>
-                        {notifications ? 
-                            <button onClick={this.pause} className="icon notification-yes"></button>
+                        <div>
+                            {notifications ?
+                                <button onClick={this.pause} className="icon notification-yes"></button>
+                                :
+                                <button onClick={this.pause} className="icon notification"></button>
+                            }
+                            <button onClick={() => setUser('')} className="icon user-loged"></button>
+                        </div>
                         :
-                            <button onClick={this.pause} className="icon notification"></button>
-                        }
-                        <button onClick={() => setUser('')} className="icon user-loged"></button>
-                    </div>
-                    :
-                    <div>
-                        <button onClick={this.pause} className="icon question"></button>
-                        <Link to="/login" >
-                            <button className="icon user"></button>
+                        <div>
+                            <Link to="/questions" >
+                                <button onClick={this.pause} className="icon question"></button>
+                            </Link>
 
-                        </Link>
-                    </div>
+                            <Link to="/login" >
+                                <button className="icon user"></button>
+
+                            </Link>
+                        </div>
                     }
                 </div>
             </div>

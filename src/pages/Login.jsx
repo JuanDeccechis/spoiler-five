@@ -8,11 +8,13 @@ class Login extends Component {
         super(props);
         this.state = {
             searchInSongs: true,
-            conditionForSign: false
+            conditionForSign: false,
+            show: false,
         };
         this.handleChangeGlobalSearch = this.handleChangeGlobalSearch.bind(this);
         this.handleClickSignIn = this.handleClickSignIn.bind(this);
         this.toggleSelectedTab = this.toggleSelectedTab.bind(this);
+        this.showIcons = this.showIcons.bind(this);
     }
 
     componentDidMount() {
@@ -48,9 +50,14 @@ class Login extends Component {
         this.setState({ selectedTab: tabContent });
     }
 
+    showIcons() {
+        const { show } = this.state;
+        this.setState({ show: !show });
+    }
+
     render() {
         const { isMobile, toggleMenuMobile, showMenuMobile, search, user, setUser } = this.props;
-        const { conditionForSign } = this.state;
+        const { conditionForSign, show } = this.state;
 
         return (
             <div>
@@ -67,30 +74,32 @@ class Login extends Component {
                         }
 
                         <form action="" method="post">
-                            <div>
+                            <div className="login-input">
                                 <label htmlFor="username">Usuario</label>
                                 <input id="username" ref="username" required/>
 
                             </div>
-                            <div>
+                            <div className="login-input">
                                 <label htmlFor="password">Contraseña</label>
                                 <input id="password" ref="password" required/>
 
                             </div>
-                            <div>
+                            <div className="login-input">
                                 <Link to="/" ref="linkToHome" onClick={this.handleClickSignIn}>
                                 <button type="button">Iniciar</button>
                                 </Link>
                                 <Link to="/" >
-                                <button type="button" onClick={this.handleClickSignIn}>Registrarse</button>
+                                <button type="button" className="primary-button" onClick={this.handleClickSignIn}>Registrarse</button>
                                 </Link>
                             </div>
                             <button>obtener plan</button>
 
                         </form>
+                        
 
-
-                        <div className="player2" >
+<button onClick={this.showIcons}>show icons</button>
+    {show &&
+    <div>                    <div className="player2" >
                             <button className="icon star-complete"></button>
                             <button className="icon like"></button>
                             <button className="icon like-complete"></button>
@@ -127,7 +136,7 @@ class Login extends Component {
                             <button className="icon search-black"></button>
                             <button className="icon user"></button>
                         </div>
-                    </div>
+                        </div>        }              </div>
                 </div>
             </div>
 

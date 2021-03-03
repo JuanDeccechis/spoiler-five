@@ -52,6 +52,13 @@ class MiAudios extends Component {
                         
                         <div>
                             <Tabs toggleSelectedTab={this.toggleSelectedTab} misAudios={true}></Tabs>
+                            {user &&
+                                <div>
+                                    <div className="separacion"></div>
+                                    <button>Subir audio</button>
+                                    <span>costo: 100 puntos </span>
+                                </div>
+                            }
                             <p>
                                 {selectedTab} que coinciden con tu busqueda:</p>
                             </div>

@@ -6,6 +6,7 @@ import MiPlaylist from './MiPlaylist'
 import MiAudios from './MiAudios'
 import PlaylistAlbum from './PlaylistAlbum'
 import ListDetails from './ListDetails'
+import Questions from './Questions'
 import { Menu, Player } from "../components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -22,6 +23,7 @@ const Routes = (props) => (
                 <Route exact path="/miAudios"> <MiAudios globalState={props.globalState} audios={props.audios} isMobile={props.isMobile}  toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
                 <Route exact path="/lists"> <PlaylistAlbum globalState={props.globalState} audios={props.audios} isMobile={props.isMobile}  toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
                 <Route exact path="/ListDetails"> <ListDetails globalState={props.globalState} audios={props.audios} isMobile={props.isMobile}  toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
+                <Route exact path="/questions"> <Questions globalState={props.globalState} audios={props.audios} isMobile={props.isMobile}  toggleMenuMobile={props.toggleMenuMobile} showMenuMobile= {props.showMenuMobile} search = {props.search} handleChangeGlobalSearch = {props.handleChangeGlobalSearch} user={props.user} setUser={props.setUser}/> </Route>
             </Switch>
         </Router>
         <Player></Player>

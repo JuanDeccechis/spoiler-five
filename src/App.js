@@ -10,6 +10,8 @@ import "./styles/home.css";
 import "./styles/miPlaylist.css";
 import "./styles/miAudios.css";
 import "./styles/song.css";
+import "./styles/login.css";
+import "./styles/questions.css";
 
 import { Routes } from './pages'
 

@@ -62,13 +62,14 @@ td{
         max-height: 200px;
     }
 }
-.playlist-text-control{
-    
-}
 
 .playlist-desktop{
     max-height: 100%; /* calc(100% - 10vh); /*si tiene abiertas las opciones*/
     overflow-y: scroll;
+}
+
+.results-complete.results-mi-playlist{
+    height: calc(80vh - 50px);
 }
 
 @media (min-width: 770px){
