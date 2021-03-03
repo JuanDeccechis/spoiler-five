@@ -19,3 +19,8 @@
     height: 20vh;
     display: inline-block;
 }
+
+.button-add-audio{
+    background-color: darkcyan;
+    margin-right: 10px;
+}

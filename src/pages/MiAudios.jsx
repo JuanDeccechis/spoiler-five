@@ -55,7 +55,7 @@ class MiAudios extends Component {
                             {user &&
                                 <div>
                                     <div className="separacion"></div>
-                                    <button>Subir audio</button>
+                                    <button className="button-add-audio">Subir audio</button>
                                     <span>costo: 100 puntos </span>
                                 </div>
                             }
