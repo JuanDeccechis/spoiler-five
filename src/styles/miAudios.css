@@ -1,6 +1,6 @@
 .results-complete{
     width: calc(100vw);
-    height: calc(80vh - 90px);
+    height: calc(80vh - 50px);
     margin: 0 auto;
     padding-top: 20px;
     overflow-y: scroll;
@@ -10,7 +10,7 @@
 @media (min-width: 770px){
     .results-complete{
         width: calc(100vw - 200px);
-        height: calc(82vh - 90px);
+        height: calc(80vh - 90px);
     }
 }
 

@@ -69,7 +69,9 @@ class Tabs extends Component {
                         }
                     </ul>
                     <div>
+                        {!misAudios &&
                         <button className="tab-item"onClick={this.handleClickToggleFilters}>filtros</button>
+                        }
                     </div>
 
                 </div>

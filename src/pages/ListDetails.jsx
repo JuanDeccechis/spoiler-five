@@ -93,9 +93,9 @@ class ListDetails extends Component {
                         <div className="search">
                             <input placeholder="Buscar" ref="inputSearch" className="input-search" onChange={this.handleChangeGlobalSearch} />
                         </div>
-                        {search &&
+                        {/*search &&
                             <Tabs toggleSelectedTab={this.toggleSelectedTab}></Tabs>
-                        }
+                        */}
                         <div className="playlist-desktop">
                             <div className="playlist-resume">
                                 <div className="image mamacita"></div>
@@ -108,6 +108,7 @@ class ListDetails extends Component {
                             </div>
                             <div className="three-lines-text playlist-text-control"> <b>Informacion: </b>{globalState.signIn[0].audios[songSelected].information} </div>
                             <div className="separacion"></div>
+                            {user &&
                             <div className="playlist-song-actions">
                                 <div>
                                     {
@@ -139,6 +140,7 @@ class ListDetails extends Component {
                                 <button className="icon add" onClick={() => this.toggleAddToListPlaylist()}></button>
 
                             </div>
+                            }
                             {addedToFavorites &&
                                 <div>Agregado a favoritos</div>
                             }

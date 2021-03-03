@@ -52,6 +52,8 @@ td{
     overflow: scroll;
     text-overflow: ellipsis;/* no funcionó*/
     max-height: 60px;
+    width: 90%;
+    margin: 0 auto;
 }
 
 @media (min-width: 770px){
@@ -61,10 +63,16 @@ td{
     }
 }
 .playlist-text-control{
-    width: 100%;
+    
 }
 
 .playlist-desktop{
-    max-height: calc(100% - 10vh); /*si tiene abiertas las opciones*/
+    max-height: 100%; /* calc(100% - 10vh); /*si tiene abiertas las opciones*/
     overflow-y: scroll;
+}
+
+@media (min-width: 770px){
+    .results-complete.results-mi-playlist{
+        height: calc(80vh - 50px);
+    }
 }

@@ -100,6 +100,7 @@ class Song extends Component {
                                     </div>
                                     <div className="three-lines-text playlist-text-control"> <b>Informacion: </b>{globalState && globalState.signIn[0].audios[songSelected].information} {globalState && globalState.signIn[0].audios[songSelected].information} </div>
                                     <div className="separacion"></div>
+                                    {user &&
                                     <div className="playlist-song-actions">
                                     <div>
                                     {
@@ -132,6 +133,7 @@ class Song extends Component {
 
 
                                     </div>
+    }
                                     {addedToFavorites && 
                                         <div>Agregado a favoritos</div>
                                     }
@@ -146,7 +148,7 @@ class Song extends Component {
                                     }
                                     <div className="separacion"></div>
                                     <div className="comments">
-
+                                        aca van los comentarios
                                     </div>
 </div>
                     </div>
