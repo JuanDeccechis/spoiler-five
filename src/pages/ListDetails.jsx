@@ -131,11 +131,11 @@ class ListDetails extends Component {
                                 !scoring &&
                                             <button className="icon star" onClick={this.setScoring}></button>
                                 }
-                                {isFavorite ?
+                                {/*isFavorite ?
                                     <button className="icon heart-complete" onClick={this.toggleFavorite}></button>
                                     :
                                     <button className="icon heart" onClick={this.toggleFavorite}></button>
-                                }
+                                */}
                                 <button className="icon share"></button>
                                 <button className="icon add" onClick={() => this.toggleAddToListPlaylist()}></button>
 

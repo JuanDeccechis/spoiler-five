@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Menu, Tabs, Header, Audio } from "../components";
 
 
-class Playlist extends Component {
+class MiPlaylist extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -92,6 +92,7 @@ class Playlist extends Component {
                                 <div>
                                     <p>Mis listas</p>
                                     <div className="results-complete results-mi-playlist">
+                                        <Audio title={"Crear Lista"} isAddPlaylist={true} />
                                         {
                                             globalState.signIn && globalState.signIn[0].audios.map((audio, index) =>
                                                 <Audio title={audio.title} key={index} onClick={this.setPlaylistSelected} />
@@ -135,11 +136,11 @@ class Playlist extends Component {
                                 !scoring &&
                                             <button className="icon star" onClick={this.setScoring}></button>
                                 }
-                                        {isFavorite ?
+                                        {/*isFavorite ?
                                             <button className="icon heart-complete" onClick={this.toggleFavorite}></button>
                                         :
                                             <button className="icon heart" onClick={this.toggleFavorite}></button>
-                                        }
+                                        */}
                                         <button className="icon share"></button>
                                         <button className="icon delete"></button>
 
@@ -188,4 +189,4 @@ class Playlist extends Component {
     }
 }
 
-export default Playlist;
+export default MiPlaylist;
